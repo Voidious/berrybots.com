@@ -50,19 +50,19 @@
       <li>Each ship program's <code>run</code> function is called. It takes two
       parameters: a table of data about all enemy ships that are visible to one
       of the program's ships and a collection of visible gameplay events that
-      occurred during physics processing at the end of the previous tick. It
-      doesn't matter which ship runs first - it's as if they're all run
-      simultaneously.</li>
+      occurred during physics processing the previous tick. It doesn't matter
+      which ship runs first - it's as if they're all run simultaneously.</li>
       <li>Game physics are processed. All ships, lasers, and torpedos move,
       check for collisions, do damage, ships bounce off walls and each other,
       ships are destroyed, and gameplay events are generated.</li>
       <li>The stage program's <code>run</code> function is called. It takes one
       parameter: a collection of all gameplay events that occurred in the
-      previous step. Along with the Ship and World objects it already has, it's
-      aware of everything going on in the game.</li>
+      previous step. With the Ship and World objects it already has, it's aware
+      of everything going on in the game.</li>
       <li>If the stage calls <code>Admin:roundOver</code> or
       <code>Admin:gameOver</code>, the corresponding function is called in each
-      of the Ship programs.</li>
+      of the Ship programs before returning control to the Stage's
+      <code>run</code> function.</li>
       <li>If graphics are enabled, the stage and ships are drawn to the screen.
       </li>
     </ul>
@@ -71,7 +71,6 @@
     Game rules
   </div>
   <div class="content_main">
-    <p>The game rules and physics are almost as simple as possible.</p>
     <p>Ships start the game and each round with 100 energy (health).</p>
     <p>Each turn, a ship receives data about enemy ships and gameplay events
     based on what it can see via direct line of sight. Then it can do any or all
@@ -88,13 +87,14 @@
     a line segment from distance 25 to distance 50 from the ship's center along
     the specified heading. A laser moves at a speed of 25 per tick. It
     dissipates when it hits a wall or inflicts 4 damage when it hits an enemy
-    ship. A ship can fire another laser after 5 ticks. Note that a ship can be
-    hit by its own lasers!</p>
+    ship. A ship can fire another laser after 5 ticks.</p>
     <p>A torpedo can be fired in any direction and with a specified distance. It
     moves at a speed of 12 and moves through walls and ships until it reaches
     the specified distance. Then it explodes with a blast radius of 100. It does
     a maximum of 30 damage and 30 knockback at the center of the blast, scaling
-    to 0 at the edge of the blast radius.</p>
+    to 0 at the edge of the blast radius. A ship can fire another torpedo after
+    100 ticks.</p>
+    <p>Be careful: a ship can be hit by its own lasers and torpedos!</p>
   </div>
   <div class="content_header">
     Game physics
