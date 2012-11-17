@@ -13,7 +13,7 @@
     <span class="menu_item"><a href="about.html">About</a></span>
     <span class="menu_item">Download</span>
     <span class="menu_item"><a href="news.html">News</a></span>
-    <span class="menu_item"><a href="docs.html">Docs</a></span>
+    <span class="menu_item"><a href="specs.html">Specs</a></span>
     <span class="menu_item"><a href="faq.html">FAQ</a></span>
     <span class="menu_item"><a href="/forums">Forums</a></span>
     <span class="menu_item"><a href="/wiki">Wiki</a></span>
@@ -108,13 +108,14 @@
     Raspberry Pi, it will look like this:</p>
     <div class="terminal_text">
       <code>
-      g++ bbpimain.cpp bbengine.cpp stage.cpp bbdefs.cpp bblua.cpp \<br>
+      g++ bbpimain.cpp bbengine.cpp stage.cpp bbutil.cpp bblua.cpp \<br>
       line2d.cpp point2d.cpp circle2d.cpp rectangle.cpp zone.cpp \<br>
       bbpigfx.cpp gfxeventhandler.cpp sensorhandler.cpp \<br>
-      cliprinthandler.cpp libshapes.c oglinit.c ./luajit/src/libluajit.a \<br>
-      -I./luajit/src -I./stlsoft-1.9.116/include -I/opt/vc/include \<br>
-      -I/opt/vc/include/interface/vcos/pthreads -L/opt/vc/lib -lGLESv2 \<br>
-      -ldl -o berrybots
+      cliprinthandler.cpp libshapes.c oglinit.c \<br>
+      ./luajit/src/libluajit.a -I./luajit/src \<br>
+      -I./stlsoft-1.9.116/include -I/opt/vc/include \<br>
+      -I/opt/vc/include/interface/vcos/pthreads -L/opt/vc/lib \<br>
+      -lGLESv2 -ldl -o berrybots
       </code>
     </div>
     <p>On Mac/Linux, make sure you're pointing to the right place for the SFML

@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>BerryBots - Specs</title>
+<link rel="stylesheet" href="berrybots.css" />
+<link rel="shortcut icon" href="favicon.gif">
+</head>
+<body>
+
+<div id="main_content">
+  <a href="/"><img src="images/logo.png"></a>
+  <div id="menu_bar" align="center">
+    <span class="menu_item"><a href="/">Home</a></span>
+    <span class="menu_item"><a href="about.html">About</a></span>
+    <span class="menu_item"><a href="download.html">Download</a></span>
+    <span class="menu_item"><a href="news.html">News</a></span>
+    <span class="menu_item">Specs</span>
+    <span class="menu_item"><a href="faq.html">FAQ</a></span>
+    <span class="menu_item"><a href="/forums">Forums</a></span>
+    <span class="menu_item"><a href="/wiki">Wiki</a></span>
+  </div>
+  <div class="content_header">
+    BerryBots API docs
+  </div>
+  <div class="content_main">
+    <p>If you want to dive right in, check out the <a href="/apidoc">BerryBots API docs</a>
+    that specify the stage and ship APIs you need to program for BerryBots.</p>
+  </div>
+  <div class="content_header">
+    Execution flow: before the match
+  </div>
+  <div class="content_main">
+    <ul>
+      <li>The stage program's <code>configure</code> function is called. It can
+      use the passed StageBuilder object to configure the stage parameters -
+      size, walls, starting points, and so on.</li>
+      <li>Each ship's <code>init</code> function is called with a reference to
+      its Ship(s) and a World object it can query for information about the
+      stage and state of the game.</li>
+      <li>The stage's <code>init</code> function is called with references to
+      all initialized Ships, the World object, and an Admin object it can use to
+      monitor the match, modify ships, and decide when the rounds and match end
+      and who wins.</li>
+    </ul>
+  </div>
+  <div class="content_header">
+    Execution flow: each turn during the match
+  </div>
+  <div class="content_main">
+    <ul>
+      <li>Each ship program's <code>run</code> function is called. It takes two
+      parameters: a table of data about all enemy ships that are visible to one
+      of the program's ships and a collection of visible gameplay events that
+      occurred during physics processing at the end of the previous tick. It
+      doesn't matter which ship runs first - it's as if they're all run
+      simultaneously.</li>
+      <li>Game physics are processed. All ships, lasers, and torpedos move,
+      check for collisions, do damage, ships bounce off walls and each other,
+      ships are destroyed, and gameplay events are generated.</li>
+      <li>The stage program's <code>run</code> function is called. It takes one
+      parameter: a collection of all gameplay events that occurred in the
+      previous step. Along with the Ship and World objects it already has, it's
+      aware of everything going on in the game.</li>
+      <li>If the stage calls <code>Admin:roundOver</code> or
+      <code>Admin:gameOver</code>, the corresponding function is called in each
+      of the Ship programs.</li>
+      <li>If graphics are enabled, the stage and ships are drawn to the screen.
+      </li>
+    </ul>
+  </div>
+  <div class="content_header">
+    Game rules
+  </div>
+  <div class="content_main">
+    <p>The game rules and physics are almost as simple as possible.</p>
+    <p>Ships start the game and each round with 100 energy (health).</p>
+    <p>Each turn, a ship receives data about enemy ships and gameplay events
+    based on what it can see via direct line of sight. Then it can do any or all
+    of 3 things: fire its thruster, fire its laser gun, or fire its torpedo gun.
+    </p>
+    <p>Firing the thruster applies a force vector to the ship's current
+    trajectory. From a stand-still, this vector becomes the ship's speed and
+    heading. If the ship is already moving, its speed and heading will be
+    slightly modified. To stop, one would use this until speed is 0:</p>
+    <div class="terminal_text">
+      <code>ship:fireThruster(ship:heading() + math.pi, ship:speed())</code>.
+    </div>
+    <p>A laser can be fired in any direction. On the tick that it's fired, it's
+    a line segment from distance 25 to distance 50 from the ship's center along
+    the specified heading. A laser moves at a speed of 25 per tick. It
+    dissipates when it hits a wall or inflicts 4 damage when it hits an enemy
+    ship. A ship can fire another laser after 5 ticks. Note that a ship can be
+    hit by its own lasers!</p>
+    <p>A torpedo can be fired in any direction and with a specified distance. It
+    moves at a speed of 12 and moves through walls and ships until it reaches
+    the specified distance. Then it explodes with a blast radius of 100. It does
+    a maximum of 30 damage and 30 knockback at the center of the blast, scaling
+    to 0 at the edge of the blast radius.</p>
+  </div>
+  <div class="content_header">
+    Game physics
+  </div>
+  <div class="content_main">
+    <p>When a ship hits a wall, it bounces off. The wall absorbs half the force
+    the ship exerts against the wall. If it just grazes the wall, this is only
+    a small percentage of its momentum; if it slams directly into a wall, it
+    will lose half of its total momentum. It doesn't take any damage</p> 
+    <p>When two ships collide, they each transfer momentum to the other ship.
+    No momentum is lost and neither ships take damage.</p>
+  </div>
+  <div id="footer">
+    &copy; 2012 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
+  </div>
+</div>
+</body>
+</html>

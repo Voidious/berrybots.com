@@ -27,7 +27,7 @@ p
 li
 {
   margin: 0.25em;
-  line-height: 1.2em;
+  line-height: 1.25em;
 }
 
 p a, li a
@@ -46,7 +46,7 @@ p a, li a
 #menu_bar
 {
   margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 
 #home_content_1
@@ -71,7 +71,7 @@ p a, li a
 
 .menu_item
 {
-  font-size: x-large;
+  font-size: 135%;
   padding: 0 12px;
 }
 
