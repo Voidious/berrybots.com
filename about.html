@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>BerryBots - About</title>
+<link rel="stylesheet" href="berrybots.css" />
+<link rel="shortcut icon" href="favicon.gif">
+</head>
+<body>
+
+<div id="main_content">
+  <a href="/"><img src="images/logo.png"></a>
+  <div id="menu_bar" align="center">
+    <span class="menu_item"><a href="/">Home</a></span>
+    <span class="menu_item">About</span>
+    <span class="menu_item"><a href="download.html">Download</a></span>
+    <span class="menu_item"><a href="news.html">News</a></span>
+    <span class="menu_item"><a href="docs.html">Docs</a></span>
+    <span class="menu_item"><a href="faq.html">FAQ</a></span>
+    <span class="menu_item"><a href="/forums">Forums</a></span>
+    <span class="menu_item"><a href="/wiki">Wiki</a></span>
+  </div>
+  <div class="content_header">
+    <p>Background</p>
+  </div>
+  <div class="content_main">
+    <p>BerryBots tries to follow in the footsteps of
+    <a href="http://robocode.sourceforge.net">Robocode</a>,
+    <a href="http://www.robotbattle.com">Robot Battle</a>,
+    <a href="http://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>,
+    and many other great programming games. Its origins can be traced back to
+    <a href="http://robowiki.net/?Raspberry_Pi">a discussion at the RoboWiki</a>,
+    a plea from a legendary Robocoder to take Robocode and package it nicely for
+    the Raspberry Pi, or perhaps create a new, lightweight
+    version of it. Robocode is often used in educational settings and it's a
+    great way to make learning to code a fun and interesting experience.
+    <p>At the time, it sounded like a daunting task. A few months later, I got
+    Raspberry Pi fever, and a few folks tried running stock Robocode on it and
+    saw pretty bad performance. I ordered one with the intent to start tinkering
+    with a new programming game, with the Raspberry Pi as the initial target
+    platform.</p>
+    <p>I began with the goal of creating a lightweight, somewhat simplified,
+    Robocode-esque game with good performance on the Raspberry Pi. What I ended
+    up with is a lightweight, flexible game that runs plenty fast enough on the
+    Raspberry Pi, has much simpler APIs and game rules than Robocode,
+    but also introduces some cool new gameplay elements, like walls, a stage
+    that's controlled by a program much as bots are, and a secondary weapon that
+    complements both the primary weapon and the presence of walls on the stage.
+    </p>
+  </div>
+  <div class="content_header">
+    <p>Credits</p>
+  </div>
+  <div class="content_main">
+    <p>
+    <ul>
+      <li><a href="http://www.lua.org">Lua</a> and
+      <a href="http://luajit.org">LuaJIT</a>: The programming language that
+      ships and stages are written in.</li>
+      <li><a href="https://github.com/ajstarks/openvg">ajstarks' OpenVG library</a>
+      for Raspberry PI: The library I used for the BerryBots prototype. It
+      taught me a lot of OpenVG for the final graphics layer and I'm still using
+      some of it, mainly the font support and init/cleanup code.</li>
+      <li><a href="http://www.sfml-dev.org">SFML</a>: A cross-platform OpenGL
+      graphics library used for the main BerryBots game graphics on other
+      platforms (Mac, Linux, Windows).</li>
+      <li><a href="http://www.wxwidgets.org">wxWidgets</a>: A cross-platform
+      menu widgets library used for the full GUI version of BerryBots (Mac,
+      Linux, Windows).</li>
+      <li><a href="http://www.stlsoft.org">STLSoft</a>: A few cross-platform
+      utility functions, like high precision CPU timer and filesystem access.</li>
+      <li><a href="http://robocode.sourceforge.net">Robocode</a>: BerryBots is
+      far from a Robocode clone, but I've spent the last 7 years addicted to
+      this amazing programming game - BerryBots is certainly influenced by
+      Robocode and would never have existed without it.</li>
+    </ul>
+    </p>
+  </div>
+  <div id="footer">
+    &copy; 2012 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
+  </div>
+</div>
+</body>
+</html>

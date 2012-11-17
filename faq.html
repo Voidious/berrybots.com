@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>BerryBots - FAQ</title>
+<link rel="stylesheet" href="berrybots.css" />
+<link rel="shortcut icon" href="favicon.gif">
+</head>
+<body>
+
+<div id="main_content">
+  <a href="/"><img src="images/logo.png"></a>
+  <div id="menu_bar" align="center">
+    <span class="menu_item"><a href="/">Home</a></span>
+    <span class="menu_item"><a href="about.html">About</a></span>
+    <span class="menu_item"><a href="download.html">Download</a></span>
+    <span class="menu_item"><a href="news.html">News</a></span>
+    <span class="menu_item"><a href="docs.html">Docs</a></span>
+    <span class="menu_item">FAQ</span>
+    <span class="menu_item"><a href="/forums">Forums</a></span>
+    <span class="menu_item"><a href="/wiki">Wiki</a></span>
+  </div>
+  <div class="faq_q">
+    <p>What is BerryBots?</p>
+  </div>
+  <div class="faq_a">
+    <p>BerryBots is a programming game designed for the Raspberry Pi, and also
+    available on other platforms (currently Mac and Linux). It tries hard to
+    cater to beginner programmers while retaining a lot of depth for seasoned
+    software developers. You can start by trying to navigate your ship through a
+    simple maze, fight through custom stages with a wide range of gameplay
+    styles, work your way up to battling against other people's ships, or design
+    your own gameplay by programming stages.</p>
+  </div>
+  <div class="faq_q">
+    <p>How do I write a bot?</p>
+  </div>
+  <div class="faq_a">
+    <p>Ships are coded in Lua, a lightweight and flexible programming language
+    designed for just this type of application, where one program is embedded
+    into another. Take a look at some of the sample bots, the
+    <a href="doc/">BerryBots API</a>, or
+    <a href="http://www.lua.org/">Lua.org</a> to get started.</p>
+  </div>
+  <div class="faq_q">
+    <p>What can a ship do?</p>
+  </div>
+  <div class="faq_a">
+    <p>A ship can...
+    <ul>
+      <li>...move by firing its thrusters.</li>
+      <li>...fire lasers at enemy ships - lasers are fast, weak, and fly until
+      they hit a wall or a ship.</li>
+      <li>...fire torpedos - torpedos are strong, slow, move a specific
+      distance, move through walls and ships, and then blow up, doing damage
+      and knockback to all ships within the blast radius.</li>
+      <li>...see other ships and certain gameplay events in their field of
+      vision (no walls in the way).</li>
+      <li>...in a team game, the ship program controls all ships on the team
+      from a single program, with all ships' combined vision and no need for
+      communication between ships to coordinate strategy or share information.
+      </li>
+    </ul>
+    </p>
+  </div>
+  <div class="faq_q">
+    <p>What can a stage do?</p>
+  </div>
+  <div class="faq_a">
+    <p>A stage can...
+    <ul>
+      <li>...configure the stage size, walls, zones, starting points, team size,
+      and battle mode, and pre-load stage ships.</li>
+      <li>...monitor everything occurring in the game, decide when a round ends,
+      when the match is over, and who wins.</li>
+      <li>...modify almost everything about ships, including destroying ships,
+      reviving ships, moving ships, modifying a ship's speed, heading, or
+      energy, and disabling or enabling a ship's thrusters, laser gun, or
+      torpedo gun.</li>
+      <li>...send custom events to ships to coordinate stage ships or
+      communicate gameplay events to player ships.</li>
+      <li>...draw text on the screen, such as a scoreboard, number of extra
+      lives, congrats when a ship scores a point, or a taunt when a ship is
+      destroyed.</li>
+    </ul>
+    </p>
+  </div>
+  <div class="faq_q">
+    <p>This looks an awful lot like Robocode / Robot Battle / RoboWar / Logo... ?</p>
+  </div>
+  <div class="faq_a">
+    <p>I'm a huge fan of Robocode. I've probably spent more time writing
+    Robocode bots than anyone ever. Robocode was inspired by Robot Battle, which
+    drew inspiration from earlier tank battle games... So BerryBots was
+    certainly influenced by Robocode and all of its predecessors. I think
+    BerryBots brings some cool new stuff to the table and I hope you'll agree.
+    (And by all means, check out Robocode and all those other games, too!)</p>
+  </div>
+  <div class="faq_q">
+    <p>What makes BerryBots special?</p>
+  </div>
+  <div class="faq_a">
+    <p>First, it's designed from the ground up to run on the Raspberry Pi. You
+    don't need anything besides what comes in Raspbian to get started writing
+    and running your bots with a terminal and a text editor. The game engine and
+    the Lua programming language are pretty fast and the 2D graphics are GPU
+    accelerated with OpenVG. You should have no problem running battles with 5-8
+    moderately complex bots at a smooth 60 frames per second.</p>
+    <p>I've gone to great lengths to make BerryBots especially welcoming to
+    beginners. Everything about the ship API and game rules is designed to be as
+    simple and intuitive as possible. I hope that folks teaching intro
+    programming classes, especially on the Raspberry Pi, will consider checking
+    out BerryBots. And it should scale smoothly to novice, moderate and advanced
+    programmers, competing with each other in battle mode, race tracks, custom
+    stages, or designing gameplay on their own stages.</p>
+    <p>Perhaps the most unique aspect of BerryBots as compared to other
+    programming games is the programmable stage. The stage is a user written
+    program loaded at run time, just as ships are. In the stage program, you can
+    configure walls, zones, starting points, and pre-loaded ships designed for
+    whatever gameplay you have in mind for the stage. The stage gets a chance to
+    run code each tick, just as each bot does. It can monitor the game, move
+    ships around, change their speed or energy, destroy and revive ships, send
+    custom events to ships, write text to the screen, decide who wins and when
+    the round or match is over. The sample stages include mazes, a race track,
+    jousting, several arcade inspired single player games, as well as battle
+    stages designed for 1v1, free-for-all, or team battles. And these only
+    scratch the surface of what could be done with the stage API.</p>
+  </div>
+  <div class="faq_q">
+    <p>Is it safe to run other people's bots?</p>
+  </div>
+  <div class="faq_a">
+    <p>Yes. Lua code has no network access. In BerryBots, the Lua I/O library is
+    disabled, so user programs don't have general file system access either.</p>
+    <p>Ships and stages can still load and run Lua code from other source files
+    on disk, but only from below the directory of the Lua program loaded by
+    BerryBots. So if you load a stage from /berrybots/stages/awesome.stage.lua,
+    it can only load other Lua source files from below /berrybots/stages. When
+    you run a packaged bot or stage, it's extracted to its own directory under
+    berrybots/cache and can only access other files that came packaged with it.
+    </p>
+  </div>
+  <div class="faq_q">
+    <p>Can't you make a nonviolent programming game?</p>
+  </div>
+  <div class="faq_a">
+    <p>I gave some serious thought to avoiding the idea of having bots shoot at
+    each other in any way. I decided that the gameplay dynamics of it are just
+    too interesting and familiar to gamers to avoid it entitely. That said, I
+    have a couple points to offer:
+    <ul>
+      <li>I've been careful to keep the violence squarely in the "cartoon
+      violence" realm. The game uses simple 2D vector graphics. There are no
+      detailed explosions or anything photorealistic. Lasers and torpedos are
+      not typical real world weapons. Ships don't "die", they are "destroyed"
+      (and can be revived!).</li>
+      <li>A stage has to enable battle mode to allow ships to shoot at each
+      other and a lot can be done with battle mode off. Many of the sample
+      stages do not use battle mode - their gameplay is entirely based on ships
+      moving around the stage. If you're averse to spaceships shooting each
+      other, limit yourself (or your students / children) to these types of
+      stages.</li>
+    </ul>
+    </p>
+  </div>
+  <div class="faq_q">
+    <p>What version of Lua is BerryBots using?</p>
+  </div>
+  <div class="faq_a">
+    <p>BerryBots uses a modified <a href="http://luajit.org">LuaJIT</a> 2.0.0,
+    which itself is a highly optimized version of Lua 5.1 with some features of
+    5.2. The changes made for BerryBots are centered on security and packaging
+    of ships and stages, specifically:
+    <ul>
+      <li>Disable the I/O library.</li>
+      <li>Only allow programs to load source code ("require", "loadfile",
+      "dofile") from paths below the directory of the primary program loaded by
+      BerryBots (i.e., your ship or stage).</li>
+      <li>Paths passed to "loadfile" and "dofile" are relative to the calling
+      file, not the top level program file. (The package path for "require" is
+      still absolute.)</li>
+      <li>Lua tracks all files opened. This allows BerryBots to load a ship or
+      stage and crawl all source files referenced, so it can package all
+      necessary files into a single zip.</li>
+    </ul>
+  </div>
+  <div id="footer">
+    &copy; 2012 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
+  </div>
+</div>
+</body>
+</html>

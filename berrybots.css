@@ -7,14 +7,32 @@ body
 
 a
 {
-  color: #000;
+  color: #00f;
   text-decoration: none;
   border: 0;
+}
+
+h2
+{
+  margin: 0;
+  padding: 0;
 }
 
 p
 {
   margin: 0.5em 0;
+  line-height: 1.25em;
+}
+
+li
+{
+  margin: 0.25em;
+  line-height: 1.2em;
+}
+
+p a, li a
+{
+  font-weight: bold;
 }
 
 #main_content
@@ -28,6 +46,7 @@ p
 #menu_bar
 {
   margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 #home_content_1
@@ -43,28 +62,17 @@ p
 #footer
 {
   font-size: small;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
   display:inline-block;
   width: 100%;
 }
 
-#footer .p
-{
-  text-align: center;
-}
-
 .menu_item
 {
   font-size: x-large;
-  padding: 0 15px;
-}
-
-.menu_item a:hover
-{
-  color: #00f;
-  text-decoration: none;
+  padding: 0 12px;
 }
 
 .text_left {
@@ -87,4 +95,51 @@ p
 {
   margin-left: 20px;
   float: right;
+}
+
+.content_header
+{
+  font-size: large;
+  font-weight: bold;
+  float: left;
+  margin-left: 90px;
+}
+
+.content_main
+{
+ width: 525px;
+ float: right;
+ margin-right: 90px;
+}
+
+.content_main ul
+{
+  margin-top: 0;
+  padding-left: 0;
+}
+
+.faq_q
+{
+  font-size: large;
+  font-style: italic;
+  float: left;
+  margin-left: 90px;
+}
+
+.faq_a
+{
+ width: 525;
+ float: right;
+ margin-right: 90px;
+}
+
+.faq_a ul
+{
+  margin-top: 0;
+}
+
+.terminal_text
+{
+  margin: 10px -50px 10px 20px;
+  line-height: 1.1em;
 }

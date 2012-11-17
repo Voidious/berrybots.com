@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>BerryBots - Download</title>
+<link rel="stylesheet" href="berrybots.css" />
+<link rel="shortcut icon" href="favicon.gif">
+</head>
+<body>
+
+<div id="main_content">
+  <a href="/"><img src="images/logo.png"></a>
+  <div id="menu_bar" align="center">
+    <span class="menu_item"><a href="/">Home</a></span>
+    <span class="menu_item"><a href="about.html">About</a></span>
+    <span class="menu_item">Download</span>
+    <span class="menu_item"><a href="news.html">News</a></span>
+    <span class="menu_item"><a href="docs.html">Docs</a></span>
+    <span class="menu_item"><a href="faq.html">FAQ</a></span>
+    <span class="menu_item"><a href="/forums">Forums</a></span>
+    <span class="menu_item"><a href="/wiki">Wiki</a></span>
+  </div>
+  <div class="content_header">
+    Binaries
+  </div>
+  <div class="content_main">
+    <ul>
+      <li><a href="files/berrybots_rpi_1.0.0.zip">BerryBots v1.0.0 for Raspberry Pi (Raspbian)</a> (500 kb)</li>
+      <li><a href="files/berrybots_linux-x64_1.0.0.zip">BerryBots v1.0.0 for Linux x86-64</a> (500 kb)</li>
+      <li><a href="files/berrybots_osx_1.0.0.zip">BerryBots v1.0.0 for Mac OS X</a> (500 kb)</li>
+      <li>(Windows coming soon!)</li>
+    </ul>
+  </div>
+  <div class="content_header">
+    Source code
+  </div>
+  <div class="content_main">
+    <ul>
+      <li><a href="files/berrybots_src_1.0.0.zip">BerryBots v1.0.0 full source</a> (250 kg)</li>
+      <li><a href="https://github.com/voidious/berrybots">GitHub: BerryBots repo</a></li>
+    </ul>
+  </div>
+  <div class="content_header">
+    Installing binaries
+  </div>
+  <div class="content_main">
+    <p>First, if you're on a Mac, you may need to install X11. On Mountain Lion
+    (10.8), you need to grab it from <a href="http://xquartz.macosforge.org/">the
+    XQuartz project</a>. On previous versions of OS X, it can be installed from
+    the developer tools.</p>
+    <p>Download and unzip the files where ever you'd like, eg:</p>
+    <div class="terminal_text">
+      <code>
+      cd ~<br>
+      unzip berrybots_rpi_1.0.0.zip
+      </code>
+    </div>
+    <p>This will create a "berrybots" subdirectory containing the binaries, font,
+    and sample stages and ships. You can view usage instructions by running
+    berrybots.sh with no arguments:</p>
+    <div class="terminal_text">
+      <code>
+      ./berrybots.sh<br>
+      Usage:<br>
+      berrybots.sh [-nodisplay] &lt;stage.lua&gt; &lt;bot1.lua&gt; [&lt;bot2.lua&gt; ...]<br>
+      OR<br>
+      berrybots.sh [-nosrc] -packstage &lt;stage.lua&gt; &lt;version&gt;<br>
+      OR<br>
+      berrybots.sh [-nosrc] -packbot &lt;bot.lua&gt; &lt;version&gt;</code><br>
+    </div>
+    <p>You run a match by passing a stage then any number of ships, with
+    the optional <code>-nodisplay</code> to run at max speed with no graphics.
+    Package a stage into a .tar.gz file with <code>-packstage</code> so you
+    can easily share it. The <code>-nosrc</code> parameter will compile your
+    source into Lua bytecode and package that instead, if you prefer not to
+    share your source code. Similarly, package a ship or team with
+    <code>-packbot</code>.</p>
+    <p>Sample stages are in the "stages" subdirectory and sample ships are in the
+    "bots" subdirectory. You could start with a jousting match:</p>
+    <div class="terminal_text">
+      <code>
+      ./berrybots.sh stages/sample.joust.lua bots/sample.chaser.lua \
+      bots/sample.jouster.lua
+      </code>
+    </div>
+  </div>
+  <div class="content_header">
+    Compiling from source
+  </div>
+  <div class="content_main">
+    <p>To compile, you'll need a C++ compiler like g++. On most Linux systems,
+    you probably already have it. On a Mac, you may need to install XCode
+    developer tools. Again unzip the download where ever you'd like and cd to
+    that directory.</p>
+    <p>You'll need to compile LuaJIT first:</p>
+    <div class="terminal_text">
+      <code>
+      cd luajit<br>
+      make<br>
+      cd ..
+      </code>
+    </div>
+    <p>On the Raspberry Pi, this takes a few minutes. On a modern Mac or Linux
+    machine, it shouldn't take long.</p>
+    <p>You also need the SFML 2.0 shared libraries - you can get them
+    <a href="http://www.sfml-dev.org/download.php#2.0-rc">here</a> or compile
+    them from source.</p>
+    <p>Once you have LuaJIT and SFML, look in the "scripts" subdirectory for
+    the appropriate shell script to compile with g++ on your platform. On the
+    Raspberry Pi, it will look like this:</p>
+    <div class="terminal_text">
+      <code>
+      g++ bbpimain.cpp bbengine.cpp stage.cpp bbdefs.cpp bblua.cpp \<br>
+      line2d.cpp point2d.cpp circle2d.cpp rectangle.cpp zone.cpp \<br>
+      bbpigfx.cpp gfxeventhandler.cpp sensorhandler.cpp \<br>
+      cliprinthandler.cpp libshapes.c oglinit.c ./luajit/src/libluajit.a \<br>
+      -I./luajit/src -I./stlsoft-1.9.116/include -I/opt/vc/include \<br>
+      -I/opt/vc/include/interface/vcos/pthreads -L/opt/vc/lib -lGLESv2 \<br>
+      -ldl -o berrybots
+      </code>
+    </div>
+    <p>On Mac/Linux, make sure you're pointing to the right place for the SFML
+    libs. On the Mac, the compile command looks something like this:</p>
+    <div class="terminal_text">
+      <code>
+      g++ bbsfmlmain.cpp bbutil.cpp gfxmanager.cpp circle2d.cpp \<br>
+      line2d.cpp point2d.cpp sensorhandler.cpp zone.cpp bbengine.cpp \<br>
+      bblua.cpp gfxeventhandler.cpp rectangle.cpp stage.cpp \<br>
+      cliprinthandler.cpp ./luajit/src/libluajit.a -I./luajit/src \<br>
+      -I./stlsoft-1.9.116/include -lsfml-graphics -lsfml-window \<br>
+      -lsfml-system -pagezero_size 10000 -image_base 100000000 \<br>
+      -o bbmain
+      </code>
+    </div>
+    <p>I have yet to create a nice build system like with "make" to save you
+    some of the platform-specific build commands and extra steps, but I promise
+    to get things a bit more organized soon.</p>
+  </div>
+  <div id="footer">
+    &copy; 2012 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
+  </div>
+</div>
+</body>
+</html>
