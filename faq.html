@@ -106,8 +106,8 @@
     don't need anything besides what comes in Raspbian to get started writing
     and running your bots with a terminal and a text editor. The game engine and
     the Lua programming language are pretty fast and the 2D graphics are GPU
-    accelerated with OpenVG. You should have no problem running battles with 5-8
-    moderately complex bots at a smooth 60 frames per second.</p>
+    accelerated with OpenVG. You should have no problem running battles with a
+    few moderately complex bots at a smooth 60 frames per second.</p>
     <p>I've gone to great lengths to make BerryBots especially welcoming to
     beginners. Everything about the ship API and game rules is designed to be as
     simple and intuitive as possible. I hope that folks teaching intro
@@ -136,10 +136,12 @@
     disabled, so user programs don't have general file system access either.</p>
     <p>Ships and stages can still load and run Lua code from other source files
     on disk, but only from below the directory of the Lua program loaded by
-    BerryBots. So if you load a stage from /berrybots/stages/awesome.stage.lua,
-    it can only load other Lua source files from below /berrybots/stages. When
-    you run a packaged bot or stage, it's extracted to its own directory under
-    berrybots/cache and can only access other files that came packaged with it.
+    BerryBots. So if you load a stage from
+    <code>/berrybots/stages/awesome.stage.lua</code>, it can only load other Lua
+    source files from below <code>/berrybots/stages</code>. When you run a
+    packaged bot or stage, it's extracted to its own directory under
+    <code>berrybots/cache</code> and can only access other files that came
+    packaged with it.
     </p>
   </div>
   <div class="faq_q">
