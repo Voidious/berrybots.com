@@ -63,11 +63,20 @@ p a, li a
 #footer
 {
   font-size: small;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   text-align: center;
   display:inline-block;
   width: 100%;
+}
+
+#footer hr
+{
+  width: 50%;
+  height: 1px;
+  color: black;
+  background-color: #000;
+  border: 0;
 }
 
 .menu_item

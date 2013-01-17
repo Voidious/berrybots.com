@@ -25,7 +25,8 @@
   <div class="content_main">
     <ul>
       <li><a href="files/berrybots_rpi_1.0.0.zip">BerryBots v1.0.0 for Raspberry Pi (Raspbian "wheezy")</a> (341 KB)</li>
-      <li><a href="files/berrybots_linux_1.0.0.zip">BerryBots v1.0.0 for Linux x86</a> (558 KB)</li>
+      <li><a href="files/berrybots_linux64_1.0.0.zip">BerryBots v1.0.0 for Linux 64-bit</a> (570 KB)</li>
+      <li><a href="files/berrybots_linux_1.0.0.zip">BerryBots v1.0.0 for Linux 32-bit</a> (558 KB)</li>
       <li><a href="files/berrybots_osx_1.0.0.zip">BerryBots v1.0.0 for Mac OS X</a> (1.4 MB)</li>
       <li>(Windows coming soon!)</li>
     </ul>
@@ -106,7 +107,8 @@
     them from source.</p>
     <p>Once you have LuaJIT and SFML, look in the "scripts" subdirectory for
     the appropriate shell script to compile with g++ on your platform. On the
-    Raspberry Pi, it will look like this:</p>
+    Raspberry Pi, you can just do <code>./scripts/build_rpi.sh</code> to compile
+    BerryBots, and that script's compile command looks like this:</p>
     <div class="terminal_text">
       <code>
       g++ bbpimain.cpp bbengine.cpp stage.cpp bbutil.cpp bblua.cpp \<br>
@@ -132,11 +134,26 @@
       -o bbmain
       </code>
     </div>
+    <p>Once you've built BerryBots, the last step is to copy the appropriate
+    shell script from <code>scripts/</code> to berrybots.sh, e.g.:</p>
+    <div class="terminal_text">
+      <code>
+      cp scripts/bb_rpi.sh ./berrybots.sh
+      </code>
+    </div>
     <p>I have yet to create a nice build system like with "make" to save you
     some of the platform-specific build commands and extra steps, but I promise
     to get things a bit more organized soon.</p>
   </div>
   <div id="footer">
+    <hr>
+    <br>
+    BerryBots up in your social medias!
+    <br><br>
+    <a href="http://facebook.com/berrybots"><img src="images/facebook_32.png" alt="Facebook" style="border:0;width:32px;height:32px;"></a>
+    <a href="http://twitter.com/berrybotsftw"><img src="images/twitter_32.png"  alt="Twitter" style="border:0;width:32px;height:32px;"></a>
+    <a href="http://plus.google.com/101467860871244117325?prsrc=3" rel="publisher" style="text-decoration:none;"><img src="images/gplus_32.png" alt="Google+" style="border:0;width:32px;height:32px;"/></a>
+    <br><br>
     &copy; 2012 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
   </div>
 </div>
