@@ -127,6 +127,12 @@ p a, li a
  margin-right: 90px;
 }
 
+.content_main ul
+{
+  margin-top: 0;
+  padding-left: 0;
+}
+
 .content_video
 {
  width: 525px;
@@ -136,10 +142,17 @@ p a, li a
  margin-top: .5em;
 }
 
-.content_main ul
+.news_main
 {
+ width: 525px;
+ float: right;
+ margin-right: 90px;
+}
+
+.news_main ul
+{
+  margin-bottom: 0;
   margin-top: 0;
-  padding-left: 0;
 }
 
 .faq_q
