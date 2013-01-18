@@ -79,6 +79,11 @@ p a, li a
   border: 0;
 }
 
+#footer img
+{
+  padding: 0 8px;
+}
+
 .menu_item
 {
   font-size: 135%;
