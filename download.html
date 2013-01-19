@@ -55,9 +55,9 @@
       unzip berrybots_rpi_1.0.1.zip
       </code>
     </div>
-    <p>This will create a "berrybots" subdirectory containing the binaries, font,
+    <p>This will create a <code>berrybots</code> subdirectory containing the binaries, font,
     and sample stages and ships. You can view usage instructions by running
-    berrybots.sh with no arguments:</p>
+    <code>berrybots.sh</code> with no arguments:</p>
     <div class="terminal_text">
       <code>
       ./berrybots.sh<br>
@@ -75,8 +75,9 @@
     <code>-packbot</code>. The <code>-nosrc</code> parameter will compile your
     source into Lua bytecode and package that instead, if you prefer not to
     share your source code.</p>
-    <p>Sample stages are in the "stages" subdirectory and sample ships are in the
-    "bots" subdirectory. For example, to run a jousting match:</p>
+    <p>Sample stages are in the <code>stages</code> subdirectory and sample
+    ships are in the <code>bots</code> subdirectory. For example, to run a
+    jousting match:</p>
     <div class="terminal_text">
       <code>
       ./berrybots.sh stages/sample.joust.lua bots/sample.chaser.lua \
@@ -93,7 +94,7 @@
     <p>To compile BerryBots, you'll need g++ (or another C++ compiler). On most Linux
     systems, you probably already have it. On a Mac, you may need to install
     XCode developer tools. Again, unzip the download where ever you'd like and
-    cd to that directory.</p>
+    change into that directory.</p>
     <div class="terminal_text">
       <code>
       cd ~<br>
@@ -106,12 +107,16 @@
     <a href="http://www.sfml-dev.org/download.php#2.0-rc">from sfml-dev.org</a>,
     from the binary downloads above, or compile them from source. Put them in
     <code>berrybots/sfml-lib</code>.</p>
-    <p>Next, look in the "scripts" subdirectory for the appropriate shell script
-    to compile BerryBots with g++ on your platform: <code>./scripts/build_rpi.sh</code>
-    on Raspberry Pi, <code>./scripts/build_osx.sh</code> on Mac, or
-    <code>./scripts/build_linux.sh</code> on Linux. This will take 10-15 minutes
-    on the Raspberry Pi. It should be pretty quick (under a minute) on a modern
-    Mac or Linux machine.</p>
+    <p>Next, look in the <code>scripts</code> subdirectory for the appropriate
+    build script for your platform (e.g., <code>build_rpi.sh</code>). Run this
+    from the parent (<code>berrybots</code>) directory.
+    <div class="terminal_text">
+      <code>
+      ./scripts/build_rpi.sh
+      </code>
+    </div>    
+    This will take 10-15 minutes on the Raspberry Pi. It should be pretty quick
+    (under a minute) on a modern Mac or Linux machine.</p>
     <p>I have yet to create a nice build system like with "make" or similar to
     save you some of the platform-specific build commands and tie in the SFML
     stuff. I promise to get things a bit more organized soon.</p>
