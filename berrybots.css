@@ -50,16 +50,6 @@ p a, li a
   margin-bottom: 0.75em;
 }
 
-#home_content_1
-{
-  display: inline-block;
-}
-
-#home_content_2
-{
-  display: inline-block;
-}
-
 #footer
 {
   font-size: small;
@@ -88,6 +78,17 @@ p a, li a
 {
   font-size: 135%;
   padding: 0 12px;
+}
+
+.home_content
+{
+  display: inline-block;
+  font-size: 115%;
+}
+
+.home_content p
+{
+  padding-top: 1em;
 }
 
 .text_left {
