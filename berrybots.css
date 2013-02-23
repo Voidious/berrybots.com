@@ -22,13 +22,13 @@ h2
 p
 {
   margin: 0.5em 0;
-  line-height: 1.25em;
+  line-height: 1.3em;
 }
 
 li
 {
   margin: 0.25em;
-  line-height: 1.25em;
+  line-height: 1.3em;
 }
 
 p a, li a
@@ -123,9 +123,9 @@ p a, li a
 
 .content_main
 {
- width: 525px;
- float: right;
- margin-right: 90px;
+  width: 525px;
+  float: right;
+  margin-right: 90px;
 }
 
 .content_main ul
@@ -136,21 +136,34 @@ p a, li a
 
 .content_video
 {
- width: 525px;
- float: right;
- margin-right: 90px;
- margin-bottom: .5em;
- margin-top: .5em;
+  width: 525px;
+  float: right;
+  margin-right: 90px;
+  margin-bottom: .5em;
+  margin-top: .5em;
 }
 
 .news_main
 {
- width: 525px;
- float: right;
- margin-right: 90px;
+  width: 525px;
+  float: right;
+  margin-right: 90px;
 }
 
 .news_main ul
+{
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.install_main
+{
+  width: 525px;
+  float: right;
+  margin-right: 90px;
+}
+
+.install_main ul
 {
   margin-bottom: 0;
   margin-top: 0;
@@ -166,9 +179,9 @@ p a, li a
 
 .faq_a
 {
- width: 525;
- float: right;
- margin-right: 90px;
+  width: 525;
+  float: right;
+  margin-right: 90px;
 }
 
 .faq_a ul

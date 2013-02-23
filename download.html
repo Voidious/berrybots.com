@@ -24,11 +24,11 @@
   </div>
   <div class="content_main">
     <ul>
-      <li><a href="files/berrybots_rpi_1.0.1.zip">BerryBots v1.0.1 for Raspberry Pi (Raspbian "wheezy")</a> (342 KB)</li>
-      <li><a href="files/berrybots_linux64_1.0.1.zip">BerryBots v1.0.1 for Linux 64-bit</a> (570 KB)</li>
-      <li><a href="files/berrybots_linux32_1.0.1.zip">BerryBots v1.0.1 for Linux 32-bit</a> (559 KB)</li>
-      <li><a href="files/berrybots_osx_1.0.1.zip">BerryBots v1.0.1 for Mac OS X</a> (1.4 MB)</li>
-      <li>(Windows coming soon!)</li>
+      <li><a href="files/berrybots_rpi_1.1.0.zip">BerryBots v1.1.0 for Raspberry Pi (Raspbian "wheezy")</a> (??? KB)</li>
+      <li><a href="files/berrybots_osx_1.1.0.zip">BerryBots v1.1.0 for Mac OS X</a> (7.8 MB)</li>
+      <li><a href="files/berrybots_linux64_1.1.0.zip">BerryBots v1.1.0 for Linux 64-bit</a> (??? MB)</li>
+      <li><a href="files/berrybots_linux32_1.1.0.zip">BerryBots v1.1.0 for Linux 32-bit</a> (??? MB)</li>
+      <li><a href="files/berrybots_windows_1.1.0.zip">BerryBots v1.1.0 for Windows</a> (??? MB)</li>
     </ul>
   </div>
   <div class="content_header">
@@ -36,86 +36,109 @@
   </div>
   <div class="content_main">
     <ul>
-      <li><a href="files/berrybots_src_1.0.1.zip">BerryBots v1.0.1 full source</a> (3.5 MB)</li>
-      <li><a href="https://github.com/voidious/BerryBots">GitHub: BerryBots repo</a></li>
+      <li><a href="files/berrybots_src_1.1.0.zip">BerryBots v1.1.0 full source</a> (??? MB)</li>
+      <li><a href="https://github.com/Voidious/BerryBots">GitHub: BerryBots repo</a></li>
     </ul>
   </div>
   <div class="content_header">
-    Installing binaries
+    Installing: Raspberry Pi (Raspbian "wheezy")
   </div>
   <div class="content_main">
-    <p>Download and unzip the files where ever you'd like, eg:</p>
+    <p>Download and unzip the files where ever you like, e.g.:</p>
     <div class="terminal_text">
       <code>
       cd ~<br>
-      unzip berrybots_rpi_1.0.1.zip
+      unzip berrybots_rpi_1.1.0.zip
       </code>
     </div>
-    <p>This will create a <code>berrybots</code> subdirectory containing the binaries, font,
-    and sample stages and ships. You can view usage instructions by running
-    <code>berrybots.sh</code> with no arguments:</p>
+    <p>This will create a <code>berrybots</code> subdirectory containing the
+    binaries, font, and sample ships and stages. You can view usage instructions
+    by running <code>berrybots.sh</code> with no arguments:</p>
     <div class="terminal_text">
       <code>
       ./berrybots.sh<br>
       Usage:<br>
       &nbsp;&nbsp;berrybots.sh [-nodisplay] &lt;stage.lua&gt; &lt;bot1.lua&gt; [&lt;bot2.lua&gt; ...]<br>
       &nbsp;&nbsp;OR<br>
-      &nbsp;&nbsp;berrybots.sh [-nosrc] -packstage &lt;stage.lua&gt; &lt;version&gt;<br>
+      &nbsp;&nbsp;berrybots.sh -packstage &lt;stage.lua&gt; &lt;version&gt;<br>
       &nbsp;&nbsp;OR<br>
-      &nbsp;&nbsp;berrybots.sh [-nosrc] -packbot &lt;bot.lua&gt; &lt;version&gt;</code><br>
+      &nbsp;&nbsp;berrybots.sh -packbot &lt;bot.lua&gt; &lt;version&gt;</code><br>
     </div>
-    <p>You run a match by passing a stage then any number of ships, with
-    the optional <code>-nodisplay</code> to run at max speed with no graphics.</p>
-    <p>Package a stage into a .tar.gz file with <code>-packstage</code> so you
-    can easily share it. Similarly, package a ship or team with
-    <code>-packbot</code>. The <code>-nosrc</code> parameter will compile your
-    source into Lua bytecode and package that instead, if you prefer not to
-    share your source code.</p>
-    <p>Sample stages are in the <code>stages</code> subdirectory and sample
-    ships are in the <code>bots</code> subdirectory. For example, to run a
-    jousting match:</p>
+    <p>Sample ships are in the <code>bots/sample</code> subdirectory and sample
+    stages are in the <code>stages/sample</code> subdirectory. You run a match
+    by passing a stage then any number of ships. For example, to run a jousting
+    match:</p>
     <div class="terminal_text">
       <code>
-      ./berrybots.sh stages/sample.joust.lua bots/sample.chaser.lua \
-      bots/sample.jouster.lua
+      ./berrybots.sh stages/sample/joust.lua bots/sample/chaser.lua \
+      bots/sample/jouster.lua
       </code>
     </div>
-    <p>To abort a match, just close the window (Mac/Linux) or press CTRL+C at the
-    terminal.</p>
+    <p>To abort a match, press ctrl+C.</p>
   </div>
   <div class="content_header">
-    Compiling from source
+    Installing: Mac / Linux / Windows
   </div>
-  <div class="content_main">
-    <p>To compile BerryBots, you'll need g++ (or another C++ compiler). On most Linux
-    systems, you probably already have it. On a Mac, you may need to install
-    XCode developer tools. Again, unzip the download where ever you'd like and
-    change into that directory.</p>
+  <div class="install_main">
+    <p>On these platforms, BerryBots is run through a graphical interface (GUI).
+    Launching the app is slightly different on each platform, but otherwise it
+    functions almost identically on all three.
+    <ul>
+      <li><strong>Mac OS X:</strong> Drop the .app into your Applications folder
+      and run it. The first time, you'll need to select a base directory for
+      BerryBots. This is where ships and stages will be located, and the API
+      docs, sample ships, and sample stages will be copied into subdirectories.
+      BerryBots supports Mac OS X 10.7 (Lion) or later.
+      </li>
+      <li><strong>Linux / Windows:</strong> Unzip where ever you like and run
+      <code>berrybots.sh</code> (Linux) or <code>BerryBots.exe</code> (Windows).
+      Ships and stages are loaded from the <code>bots</code> and
+      <code>stages</code> subdirectories. API documentation is in the
+      <code>apidoc</code> subdirectory.</li>
+    </ul>
+    </p>
+  </div>
+  <div class="content_header">
+    Compiling from source: Raspberry Pi (Raspbian "wheezy")
+  </div>
+  <div class="install_main">
+    <p>Compiling BerryBots on the Raspberry Pi is simple. Check out or unzip the
+    code where ever you like, change into that directory, and run the build
+    script.</p>
     <div class="terminal_text">
       <code>
       cd ~<br>
-      unzip berrybots_src_1.0.1.zip<br>
-      cd berrybots
-      </code>
-    </div>
-    <p>On Mac or Linux, you also need the SFML 2.0 shared libraries. This is the
-    cross-platform graphics library used by BerryBots. You can get them
-    <a href="http://www.sfml-dev.org/download.php#2.0-rc">from sfml-dev.org</a>,
-    from the binary downloads above, or compile them from source. Put them in
-    <code>berrybots/sfml-lib</code>.</p>
-    <p>Next, look in the <code>scripts</code> subdirectory for the appropriate
-    build script for your platform (e.g., <code>build_rpi.sh</code>). Run this
-    from the parent (<code>berrybots</code>) directory.
-    <div class="terminal_text">
-      <code>
+      unzip berrybots_src_1.1.0.zip<br>
+      cd berrybots<br>
       ./scripts/build_rpi.sh
       </code>
-    </div>    
-    This will take 10-15 minutes on the Raspberry Pi. It should be pretty quick
-    (under a minute) on a modern Mac or Linux machine.</p>
-    <p>I have yet to create a nice build system like with "make" or similar to
-    save you some of the platform-specific build commands and tie in the SFML
-    stuff. I promise to get things a bit more organized soon.</p>
+    </div>
+    <p>This will take 10-15 minutes to complete.</p>
+  </div>
+  <div class="content_header">
+    Compiling from source: Mac / Linux / Windows
+  </div>
+  <div class="install_main">
+    <p>To compile BerryBots on these platforms, you'll need g++ (or another C++
+    compiler). On most Linux systems, you probably already have it. On Mac OS X,
+    you can get it from the XCode developer tools, which is on the OS install CD
+    and <a href="https://developer.apple.com/xcode/">in the Mac App Store</a>.
+    On Windows, I'm using <a href="http://www.mingw.org/">MinGW</a>.</p>
+    <p>The build process on each platform is slightly different, but the high
+    level steps are the same.
+    <ul>
+      <li>Download <a href="http://www.sfml-dev.org">SFML 2.0</a> libraries or
+      compile them from source.</li>
+      <li>Download <a href="http://www.wxwidgets.org">wxWidgets 2.9.4</a>
+      libraries or compile them from source.</li>
+      <li>Compile <a href="http://www.libarchive.org">libarchive</a> from
+      source, linking with <a href="http://www.zlib.net">zlib</a>.</li>
+      <li>Download the BerryBots source code and compile it, linking against
+      the above 3 libraries. A modified version of
+      <a href="http://luajit.org">LuaJIT</a> is part of the BerryBots source
+      tree and is compiled/linked by the included build scripts.</li>
+    </ul>
+    </p>
   </div>
   <div id="footer">
     <hr>
