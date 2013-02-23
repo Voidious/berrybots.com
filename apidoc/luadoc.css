@@ -1,8 +1,9 @@
 body { 
     margin-left: 1em; 
     margin-right: 1em; 
-    font-family: arial, helvetica, geneva, sans-serif;
-	background-color:#ffffff; margin:0px;
+    font-family: Ubuntu, Arial, Tahoma, sans-serif;
+    font-size: medium;
+    background-color:#ffffff;
 }
 
 code {
@@ -113,18 +114,6 @@ div.header, div.footer { margin-left: 0em; }
 	font-size: 2em;
 }
 
-#product_logo
-{
-}
-
-#product_name
-{
-}
-
-#product_description
-{
-}
-
 #main
 {
 	background-color: #f0f0f0;
@@ -182,6 +171,20 @@ div.header, div.footer { margin-left: 0em; }
 	background-color: #ffffff;
 }
 
+#intro
+{
+    display: inline-block;
+    margin-left: -1em;
+    margin-top: -1em;
+}
+
+#intro p
+{
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+}
+
 #about
 {
 	clear: both;
@@ -197,12 +200,31 @@ div.header, div.footer { margin-left: 0em; }
 	}
 	a { font-weight:bold; color: #004080; text-decoration: underline; }
 	
-	#main	{		background-color: #ffffff;		border-left: 0px;	}	
-	#container	{		margin-left: 2%;		margin-right: 2%;		background-color: #ffffff;	}
+	#main
+	{
+		background-color: #ffffff;
+		border-left: 0px;
+	}
 	
-	#content	{		margin-left: 0px;		padding: 1em;		border-left: 0px;		border-right: 0px;		background-color: #ffffff;	}
+	#container
+	{
+		margin-left: 2%;
+		margin-right: 2%;
+		background-color: #ffffff;
+	}
 	
-	#navigation	{		display: none;
+	#content
+	{
+		margin-left: 0px;
+		padding: 1em;
+		border-left: 0px;
+		border-right: 0px;
+		background-color: #ffffff;
+	}
+	
+	#navigation
+	{
+		display: none;
 	}
 	pre.example {
 		font-family: "Andale Mono", monospace; 

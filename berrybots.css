@@ -52,12 +52,12 @@ p a, li a
 
 #home_content_1
 {
-  display:inline-block;
+  display: inline-block;
 }
 
 #home_content_2
 {
-  display:inline-block;
+  display: inline-block;
 }
 
 #footer
@@ -66,7 +66,7 @@ p a, li a
   margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
-  display:inline-block;
+  display: inline-block;
   width: 100%;
 }
 
