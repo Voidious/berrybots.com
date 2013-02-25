@@ -110,7 +110,7 @@
       cd ~<br>
       unzip berrybots_src_1.1.0.zip<br>
       cd berrybots<br>
-      ./scripts/build_rpi.sh
+      make rpi
       </code>
     </div>
     <p>This will take 10-15 minutes to complete.</p>
@@ -120,24 +120,32 @@
   </div>
   <div class="install_main">
     <p>To compile BerryBots on these platforms, you'll need g++ (or another C++
-    compiler). On most Linux systems, you probably already have it. On Mac OS X,
-    you can get it from the XCode developer tools, which is on the OS install CD
-    and <a href="https://developer.apple.com/xcode/">in the Mac App Store</a>.
-    On Windows, I'm using <a href="http://www.mingw.org/">MinGW</a>.</p>
+    compiler). On Mac OS X, you can get it from the XCode developer tools, which
+    is on the OS install CD and
+    <a href="https://developer.apple.com/xcode/">in the Mac App Store</a>.
+    On most Linux systems, you probably already have it. On Windows, you can use
+    <a href="http://www.mingw.org/">MinGW</a>.</p>
     <p>The build process on each platform is slightly different, but the high
     level steps are the same.
-    <ul>
-      <li>Download <a href="http://www.sfml-dev.org">SFML 2.0</a> libraries or
-      compile them from source.</li>
-      <li>Download <a href="http://www.wxwidgets.org">wxWidgets 2.9.4</a>
-      libraries or compile them from source.</li>
-      <li>Compile <a href="http://www.libarchive.org">libarchive</a> from
-      source, linking with <a href="http://www.zlib.net">zlib</a>.</li>
-      <li>Download the BerryBots source code and compile it, linking against
-      the above 3 libraries. A modified version of
-      <a href="http://luajit.org">LuaJIT</a> is part of the BerryBots source
-      tree and is compiled/linked by the included build scripts.</li>
-    </ul>
+      <ul>
+        <li>Download <a href="http://www.sfml-dev.org">SFML 2.0</a> libraries or
+        compile them from source.</li>
+        <li>Download <a href="http://www.wxwidgets.org">wxWidgets 2.9.4</a>
+        libraries or compile them from source.</li>
+        <li>Compile <a href="http://www.libarchive.org">libarchive</a> from
+        source, linking with <a href="http://www.zlib.net">zlib</a>.</li>
+        <li>Download the BerryBots source code and compile it, linking against
+        the above 3 libraries. A modified version of
+        <a href="http://luajit.org">LuaJIT</a> is part of the BerryBots source
+        tree and is compiled/linked by the BerryBots build process</li>
+      </ul>
+    </p>
+    <p>For detailed instructions, see the following wiki articles:
+      <ul>
+        <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Mac_OS_X_command_line">Compiling BerryBots on Mac OS X command line</a></li>
+        <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Linux">Compiling BerryBots on Linux</a></li>
+        <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Windows_with_MinGW">Compiling BerryBots on Windows with MinGW</a></li>
+      </ul>
     </p>
   </div>
   <div id="footer">
