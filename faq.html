@@ -37,9 +37,11 @@
   <div class="faq_a">
     <p>Ships are coded in Lua, a lightweight and flexible programming language
     designed for just this type of application, where one program is embedded
-    into another. Take a look at some of the sample bots, the
-    <a href="/apidoc/">BerryBots API</a>,
-    the <a href="http://www.lua.org/manual/5.1/">Lua 5.1 manual</a>, or the
+    into another. Take a look at the
+    <a href="http://berrybots.com/wiki/index.php?title=Category:Sample_Bots">sample ships</a>,
+    <a href="http://berrybots.com/wiki/index.php?title=Category:Sample_Stages">sample stages</a>,
+    <a href="/apidoc/">BerryBots API docs</a>,
+    <a href="http://www.lua.org/manual/5.1/">Lua 5.1 manual</a>, or the
     <a href="http://lua-users.org/wiki/TutorialDirectory">Lua-users Tutorial Directory</a>
     to get started.
     </p>
@@ -48,19 +50,19 @@
     What can a ship do?
   </div>
   <div class="faq_a">
-    <p>A ship can...
+    <p>A ship program can...
     <ul>
-      <li>...move by firing its thrusters.</li>
-      <li>...fire lasers at enemy ships - lasers are fast, weak, and fly until
-      they hit a wall or a ship.</li>
-      <li>...fire torpedos - torpedos are strong, slow, move a specific
-      distance, move through walls and ships, and then blow up, doing damage
+      <li>...move a ship by firing its thrusters.</li>
+      <li>...fire a ship's lasers at enemy ships. Lasers are fast, weak, and
+      fly until they hit a ship or a wall.</li>
+      <li>...fire a ship's torpedos. Torpedos are strong, slow, move a specific
+      distance, move through walls and ships, and then explode, doing damage
       and knockback to all ships within the blast radius.</li>
-      <li>...see other ships and certain gameplay events in their field of
-      vision (no walls in the way).</li>
-      <li>...in a team game, the ship program controls all ships on the team
-      from a single program, with all ships' combined vision and no need for
-      communication between ships to coordinate strategy or share information.
+      <li>...see other ships and certain gameplay events in the field of
+      vision of the ships it controls (i.e., no walls in the way).</li>
+      <li>...control all ships on a team from a single program, with all ships'
+      combined vision. No need for communication between ships to coordinate
+      strategy or share information.
       </li>
     </ul>
     </p>
@@ -69,12 +71,12 @@
     What can a stage do?
   </div>
   <div class="faq_a">
-    <p>A stage can...
+    <p>A stage program can...
     <ul>
       <li>...configure the stage size, walls, zones, starting points, team size,
       and battle mode, and pre-load stage ships.</li>
-      <li>...monitor everything occurring in the game, decide when a round ends,
-      when the match is over, and who wins.</li>
+      <li>...monitor everything in the game, decide when a round ends, when the
+      game is over, and who wins.</li>
       <li>...modify almost everything about ships, including destroying ships,
       reviving ships, moving ships, modifying a ship's speed, heading, or
       energy, and disabling or enabling a ship's thrusters, laser gun, or
@@ -132,17 +134,28 @@
     Is it safe to run other people's bots?
   </div>
   <div class="faq_a">
-    <p>Yes. Lua code has no network access. In BerryBots, the Lua I/O library is
-    disabled, so user programs don't have general file system access either.</p>
-    <p>Ships and stages can still load and run Lua code from other source files
-    on disk, but only from below the directory of the Lua program loaded by
-    BerryBots. So if you load a stage from
-    <code>/berrybots/stages/awesome.stage.lua</code>, it can only load other Lua
-    source files from below <code>/berrybots/stages</code>. When you run a
-    packaged bot or stage, it's extracted to its own directory under
-    <code>berrybots/cache</code> and can only access other files that came
-    packaged with it.
-    </p>
+    <p>You should always be careful running any kind of untrusted code on your
+    system. But yes, I've done my best to create a secure sandbox for running
+    BerryBots ships and stages. Specifically:</p>
+    <ul>
+      <li>Lua code has no network access in the first place.</li>
+      <li>Disabled support for loading LuaJIT bytecode.</li>
+      <li>Disabled the Lua/LuaJIT libraries:
+      <ul>
+        <li><code>io</code> - general filesystem access</li>
+        <li><code>os</code> - OS operations, like executing commands</code></li>
+        <li><code>debug</code> - various ways of poking around the Lua state</li>
+        <li><code>jit</code> - alters settings of the JIT compiler</li>
+        <li><code>package.loadlib</code> - directly loads functions from C
+        libraries</li>
+      </ul>
+      <li>Lua's <code>require</code>, <code>loadfile</code>, and
+      <code>dofile</code> functions can only load Lua source files from
+      BerryBots' data directories.</li>
+      <li>Disallow running any packaged ships or stages that contain symbolic
+      links.</li>
+    </ul>
+    
   </div>
   <div class="faq_q">
     Can't you make a nonviolent programming game?
@@ -174,19 +187,7 @@
     <p>BerryBots uses a modified <a href="http://luajit.org">LuaJIT</a> 2.0.0,
     which itself is a highly optimized version of Lua 5.1 with some features of
     5.2. The changes made for BerryBots are centered on security and packaging
-    of ships and stages, specifically:
-    <ul>
-      <li>Disable the I/O library.</li>
-      <li>Only allow programs to load source code ("require", "loadfile",
-      "dofile") from paths below the directory of the primary program loaded by
-      BerryBots (i.e., your ship or stage).</li>
-      <li>Paths passed to "loadfile" and "dofile" are relative to the calling
-      file, not the top level program file. (The package path for "require" is
-      still absolute.)</li>
-      <li>Lua tracks all files opened. This allows BerryBots to load a ship or
-      stage and crawl all source files referenced, so it can package all
-      necessary files into a single zip.</li>
-    </ul>
+    of ships and stages.
   </div>
   <div id="footer">
     <hr>
@@ -200,5 +201,6 @@
     &copy; 2012 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
   </div>
 </div>
+<span id="forkongithub"><a href="https://github.com/Voidious/BerryBots">Fork me on GitHub</a></span>
 </body>
 </html>
