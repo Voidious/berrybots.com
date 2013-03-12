@@ -20,16 +20,48 @@
     <span class="menu_item"><a href="/wiki">Wiki</a></span>
   </div>
   <div class="content_header">
-    Latest news
+    BerryBots News
   </div>
   <div class="news_main">
-    <p><strong>January 18, 2013:</strong> BerryBots 1.0.1 released</p>
+    <p><a name="1.1.0"></a><strong>March 11, 2013: BerryBots v1.1.0</strong></p>
+    <ul>
+      <li>Full GUI for Mac / Linux / Windows.
+      <ul>
+        <li>Dialogs for running matches, packaging ships and stages.</li>
+        <li>Left-hand dock in main window to access ship/stage output consoles, pause or restart the match, and adjust execution speed.</li>
+        <li>Preview stages from New Match dialog (like Mac's "Quick Look").</li>
+        <li>Quick access to ship and stage directories and API documentation.</li>
+        <li>Keyboard shortcuts for just about everything - hit Command (on Mac) or Alt (everywhere else) to see hints.</li>
+      </ul></li>
+      <li>Improvements to sample ships and stages.</li>
+      <ul>
+        <li>New targeting challenge stage: <a href="http://berrybots.com/wiki/LaserGallery">LaserGallery</a>. Goal is to destroy each of five ships with increasingly hard to hit movements as quickly as possible.</li>
+        <li>New 5v5 team battle stage: <a href="http://berrybots.com/wiki/TeamBattle1">TeamBattle1</a>. Try RandomBot, WallHugger, and Chaser.</li>
+        <li>Stages display warning if loaded with wrong number of ships, and destroy any extra ships.</li>
+        <li>Battle stages display game time in bottom left and scores at end of a match.</li>
+        <li>Maze stages display completion time.</li>
+        <li>Misc bug fixes, code cleanup, and colors.</li>
+      </ul></li>
+      <li>Sandbox improvements:
+      <ul>
+        <li>Removed support for loading or packaging ships/stages as LuaJIT bytecode. Running bytecode is much more dangerous than source code. There are Lua bytecode exploits to escape a sandbox and execute arbitrary code. Roblox's blog post about removing bytecode support provides a good overview: <a href="http://blog.roblox.com/2012/08/bye-bye-bytecode/">Bye Bye Bytecode</a>.</li>
+        <li>Disabled LuaJIT Debug library, JIT library, and <tt>package.loadlib</tt> function. (I/O and OS libraries already disabled.)</li>
+        <li>Disallow running ship/stage packages that contain symlinks.</li>
+        <li>Hard limit on CPU time for each call to user Lua code. The limit is quite large - the goal for now is only to recover gracefully from misbehaving code. If a stage hits this limit, the match is aborted. If a ship hits the limit, it's disabled for the rest of the match.</li>
+      </ul></li>
+      <li>Lots of bug fixes, code refactoring, and cleanup, including:
+      <ul>
+        <li><tt>bots/</tt> and <tt>stages/</tt> directories are now the base path for loading packages, not the directory of the main ship/stage file. So you can have a library in<br/><tt>bots/voidious/pathlib.lua</tt><br/>and use it from<br/><tt>bots/voidious/maze/mazemaster.lua</tt><br/>with:<br/><tt>require "voidious.pathlib"</tt><br/>Having source files spread across directories works much better now.</li>
+        <li>Re-organized build process with Makefile and <a href="http://berrybots.com/wiki/Category:Compiling_BerryBots">documented build instructions on the wiki</a>.</li>
+      </ul></li>
+    </ul>
+    <p><a name="1.0.1"></a><strong>January 18, 2013: BerryBots v1.0.1</strong></p>
     <ul>
       <li>Simplified the build process on all platforms.</li>
       <li>Fixed several issues with compiling under Linux (32-bit and 64-bit).</li>
       <li>Misc fixes to the sample ships and stages.</li>
     </ul>
-    <p><strong>November 20, 2012:</strong> BerryBots 1.0.0 released - yay! =)</p>
+    <p><a name="1.0.0"></a><strong>November 20, 2012: BerryBots v1.0.0 released - yay! =)</strong></p>
   </div>
   <div class="content_header">
     Coming soon
@@ -37,8 +69,8 @@
   <div class="content_main">
     <p>
     <ul>
-      <li>Windows support</li>
-      <li>Full GUI/menu version for Mac/Linux/Windows</li>
+      <li>Battle runner API for running batch battles and competitions</li>
+      <li>Granular results handling</li>
       <li>Configurable CPU usage limits</li>
     </ul>
     </p>
