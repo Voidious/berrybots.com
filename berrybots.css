@@ -36,6 +36,11 @@ p a, li a
   font-weight: bold;
 }
 
+#logo
+{
+  text-align: center;
+}
+
 #main_content
 {
   width: 750px;
