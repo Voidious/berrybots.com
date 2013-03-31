@@ -23,6 +23,16 @@
     BerryBots News
   </div>
   <div class="news_main">
+    <p><a name="1.1.3"></a><strong>March 31, 2013: BerryBots v1.1.3</strong></p>
+    <ul>
+      <li>Document hard limit of 4096 of each type of debugging graphic. Print
+      warning to ship/stage console if the limit is hit.</li>
+      <li>When game is paused and window loses focus, drop frame rate to 5 fps
+      to consume less resources.</li>
+      <li>Bug fix: Don't disable garbage collection during calls to user Lua
+      code. This was inadvertently causing GC never to run for some
+      memory-intensive bots.</li>
+    </ul>
     <p><a name="1.1.2"></a><strong>March 24, 2013: BerryBots v1.1.2</strong></p>
     <ul>
       <li>Display debris when a ship is hit by a torpedo. One particle of debris
