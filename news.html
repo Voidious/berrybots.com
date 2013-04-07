@@ -23,6 +23,23 @@
     BerryBots News
   </div>
   <div class="news_main">
+    <p><a name="1.1.4"></a><strong>April 7, 2013: BerryBots v1.1.4</strong></p>
+    <ul>
+      <li>Bug fix: World.touchedZone and World.touchedAnyZone fixed for ship
+      programs. They were working for stages, but functioning the same
+      as inZone/inAnyZone for ships.</li>
+      <li>Bug fix: Memory leaks from not closing Lua states for ship
+      programs, and not detaching timer thread.</li>
+      <li>Bug fix: Always print to end of output console, even after user has
+      moved the cursor.</li>
+      <li>Tweaked zone tags in <tt>sample/racetrack.lua</tt> to give a better
+      clue to ships as to which direction they should move around the track.</li>
+      <li>On Mac OS X, added a plist setting to allow disabling anti-aliasing
+      in the game graphics. Set <tt>Disable Anti-aliasing</tt> to <tt>true</tt>
+      in <tt>~/Library/Application Support/BerryBots/config.plist</tt>. If
+      you're on an older Mac and BerryBots crashes when you start a match, give
+      this a try.</li>
+    </ul>
     <p><a name="1.1.3"></a><strong>March 31, 2013: BerryBots v1.1.3</strong></p>
     <ul>
       <li>Document hard limit of 4096 of each type of debugging graphic. Print
@@ -41,8 +58,8 @@
       encounter errors, in addition to error message.</li>
       <li>Print a different message to output console when a ship destroys
       itself.</li>
-      <li>On Mac, offer to update samples and API docs in base directory when
-      running a new version for the first time.</li>
+      <li>On Mac OS X, offer to update samples and API docs in base directory
+      when running a new version for the first time.</li>
       <li>Bug fix: Output consoles can be properly resized again.</li>
       <li>Bug fix: Ships and stages packaged on Windows now work on
       non-Windows.</li>
