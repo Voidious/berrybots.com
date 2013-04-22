@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>BerryBots API: RunnerFiles</title>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,bold' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:regular,bold' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../luadoc.css" type="text/css" />
+	<!--meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/-->
+</head>
+
+<body>
+<div id="container">
+
+<div id="main">
+
+<div id="navigation">
+
+
+<h1>BerryBots Lua API</h1>
+<ul>
+  
+  <li><a href="../index.html">Index</a></li>
+  
+</ul>
+
+
+<!-- Ship / stage module list -->
+
+<h1>Ship / Stage Modules</h1>
+<ul>
+
+  <li>
+    <a href="../modules/Admin.html">Admin</a>
+  </li>
+
+  <li>
+    <a href="../modules/DebugGfx.html">DebugGfx</a>
+  </li>
+
+  <li>
+    <a href="../modules/Sensors.html">Sensors</a>
+  </li>
+
+  <li>
+    <a href="../modules/Ship.html">Ship</a>
+  </li>
+
+  <li>
+    <a href="../modules/ShipControl.html">ShipControl</a>
+  </li>
+
+  <li>
+    <a href="../modules/StageBuilder.html">StageBuilder</a>
+  </li>
+
+  <li>
+    <a href="../modules/StageControl.html">StageControl</a>
+  </li>
+
+  <li>
+    <a href="../modules/StageSensors.html">StageSensors</a>
+  </li>
+
+  <li>
+    <a href="../modules/World.html">World</a>
+  </li>
+
+</ul>
+
+
+
+<!-- Game Runner module list -->
+
+<h1>Game Runner Modules</h1>
+<ul>
+
+  <li>
+    <a href="../modules/MatchRunner.html">MatchRunner</a>
+  </li>
+
+  <li>
+    <a href="../modules/RunnerControl.html">RunnerControl</a>
+  </li>
+
+  <li><strong>RunnerFiles</strong></li>
+  
+  <li>
+    <a href="../modules/RunnerForm.html">RunnerForm</a>
+  </li>
+
+</ul>
+
+
+
+<!-- File list -->
+
+
+
+<h1>Helpful Links</h1>
+<ul>
+    <li><a href="http://www.lua.org/manual/5.1/">Lua 5.1 Manual</a></li>
+    <li><a href="http://lua-users.org/wiki/TutorialDirectory">Lua-users Tutorial Directory</a></li>
+    <li><a href="http://berrybots.com/wiki/index.php?title=Category:Sample_Bots">Sample Ships</a>
+    <li><a href="http://berrybots.com/wiki/index.php?title=Category:Sample_Stages">Sample Stages</a>
+    <li><a href="http://berrybots.com/specs.html">BerryBots Game Specs</a></li>
+    <li><a href="http://berrybots.com/wiki">BerryBots Wiki</a></li>
+</ul>
+
+
+</div><!-- id="navigation" -->
+
+<div id="content">
+
+<h1>Module <code>RunnerFiles</code></h1>
+
+<p>A file access object used by a Game Runner program to read and write files to disk. It's only allowed to access files under the <code>runners</code> subdirectory.</p>
+
+
+
+
+
+<h2>Functions</h2>
+<table class="function_list">
+
+	<tr>
+	<td class="name" nowrap><a href="#exists">exists</a>&nbsp;(filename)</td>
+	<td class="summary">Checks if a file exists.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#read">read</a>&nbsp;(filename)</td>
+	<td class="summary">Reads the contents of a file.</td>
+	</tr>
+
+	<tr>
+	<td class="name" nowrap><a href="#write">write</a>&nbsp;(filename, contents)</td>
+	<td class="summary">Writes a file to disk.</td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+<br/>
+<br/>
+
+
+
+<h2><a name="functions"></a>Functions</h2>
+<dl class="function">
+
+
+
+<dt><a name="exists"></a><strong>exists</strong>&nbsp;(filename)</dt>
+<br/>
+<dd>
+Checks if a file exists.
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  filename: The name of the file under the <code>runners</code> subdirectory.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+<code>true</code> if the file exists, <code>false</code> otherwise.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="read"></a><strong>read</strong>&nbsp;(filename)</dt>
+<br/>
+<dd>
+Reads the contents of a file.
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  filename: The name of the file under the <code>runners</code> subdirectory.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+<h3>Return value:</h3>
+The contents of the file as a string, or <code>nil</code> if the file doesn't exist.
+
+
+
+</dd>
+
+
+
+
+<dt><a name="write"></a><strong>write</strong>&nbsp;(filename, contents)</dt>
+<br/>
+<dd>
+Writes a file to disk.
+
+
+<h3>Parameters</h3>
+<ul>
+	
+	<li>
+	  filename: The name of the file under the <code>runners</code> subdirectory.
+	</li>
+	
+	<li>
+	  contents: The contents of the file as a string.
+	</li>
+	
+</ul>
+
+
+
+
+
+
+
+
+</dd>
+
+
+</dl>
+
+
+
+
+
+
+</div> <!-- id="content" -->
+
+</div> <!-- id="main" -->
+
+<div id="about">
+</div> <!-- id="about" -->
+
+</div> <!-- id="container" -->	
+</body>
+</html>

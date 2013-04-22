@@ -23,6 +23,37 @@
     BerryBots News
   </div>
   <div class="news_main">
+    <p><a name="1.2.0"></a><strong>April 21, 2013: BerryBots v1.2.0</strong></p>
+    <ul>
+      <li>Game Runner API to execute BerryBots matches and process the results.
+      Watch the
+      <a href="http://youtu.be/YmCZjgF3e3E">overview video</a> or read the
+      <a href="http://berrybots.com/apidoc/modules/RunnerControl.html">API docs</a>.
+      <ul>
+        <li>Multi-threaded execution of matches.</li>
+        <li>Simple system for configuring and receiving input parameters,
+        presented to user through a GUI form.</li>
+        <li>Basic file access for saving settings or match results.</li>
+        <li>Includes sample Game Runner programs for batch single-player stages
+        (like <a href="http://berrybots.com/wiki/LaserGallery">LaserGallery</a>),
+        batch duels, and a single-elimination tournament.</li>
+        <li>For now, only supports Mac, Linux, and Windows.</li>
+      </ul></li>
+      <li>Robust results handling.
+      <ul>
+        <li>In addition to setting a winner, stages can
+        set ranks, scores, and/or custom statistics for each ship or team.</li>
+        <li>If no winner is set, winner is ship/team with rank=1. If no winner
+        or ranks are set by the stage, they are determined according to highest
+        scores.</li>
+        <li>Sample stages updated with ranks, scores, and statistics.</li>
+        <li>Sample Game Runners support ranks, scores, and statistics.
+       </ul></li>
+      <li>Added color and duration parameters to <tt>Admin.drawText()</tt> (now
+      same as <tt>DebugGfx.drawText()</tt>).
+      <li>Bug fix: Don't segfault when quitting from Package Ship or Package
+      Stage dialogs on Linux.</li>
+    </ul>
     <p><a name="1.1.4"></a><strong>April 7, 2013: BerryBots v1.1.4</strong></p>
     <ul>
       <li>Bug fix: World.touchedZone and World.touchedAnyZone fixed for ship
@@ -74,7 +105,7 @@
       <a href="http://www.youtube.com/watch?v=wBtiSDTj4ik">overview video</a> or
       read the
       <a href="http://berrybots.com/apidoc/modules/DebugGfx.html">DebugGfx API docs</a>.
-      (Right now only works on Mac, Linux, and Windows.)</li>
+      For now, only supports Mac, Linux, and Windows.</li>
       <li>Updated LuaJIT to 2.0.1.</li>
     </ul>
     <p><a name="1.1.0"></a><strong>March 11, 2013: BerryBots v1.1.0</strong></p>
