@@ -1,62 +1,52 @@
-body
-{
+body {
   margin-top: 0;
   font-family: Ubuntu, Arial, Tahoma, sans-serif;
   font-size: medium;
   color: #000;
 }
 
-a
-{
+a {
   color: #00f;
   text-decoration: none;
   border: 0;
 }
 
-h2
-{
+h2 {
   margin: 0;
   padding: 0;
 }
 
-p
-{
+p {
   margin: 0.5em 0;
   line-height: 1.3em;
 }
 
-li
-{
+li {
   margin: 0.25em;
   line-height: 1.3em;
 }
 
-p a, li a
-{
+p a, li a {
   font-weight: bold;
 }
 
-#logo
-{
+#logo {
   text-align: center;
 }
 
-#main_content
-{
+#main_content {
   width: 750px;
   left: 50%;
   margin-left: -375px;
   position: absolute;
 }
 
-#menu_bar
-{
+#menu_bar {
   margin-top: 0.5em;
   margin-bottom: 0.75em;
 }
 
-#footer
-{
+#footer {
   font-size: small;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -65,8 +55,7 @@ p a, li a
   width: 100%;
 }
 
-#footer hr
-{
+#footer hr {
   width: 50%;
   height: 1px;
   color: black;
@@ -74,26 +63,27 @@ p a, li a
   border: 0;
 }
 
-#footer img
-{
+#footer img {
   padding: 0 8px;
 }
 
-.menu_item
-{
+.menu_item {
   font-size: 135%;
   padding: 0 12px;
 }
 
-.home_content
-{
+.home_content {
   display: inline-block;
   font-size: 115%;
 }
 
-.home_content p
-{
-  padding-top: 1em;
+.home_content p {
+  padding-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.home_content ul {
+  font-size: 0.9em;
 }
 
 .text_left {
@@ -106,41 +96,77 @@ p a, li a
   float: right;
 }
 
-.img_left
-{
+.text_right ul {
+  margin-top: 0;
+  padding-left: 1.5em;
+}
+
+.img_left {
   margin-right: 20px;
   float: left;
 }
 
-.img_right
-{
+.img_right {
   margin-left: 20px;
   float: right;
 }
 
-.content_header
-{
+.img_wrap {
+  position: relative;
+}
+
+.play {
+  display: block;
+  height: 0;
+  width: 0 !important;
+  border-left: 40px solid #fff;
+  border-left-color: #0f0;
+  border-bottom: 40px solid transparent;
+  border-top: 40px solid transparent;
+  transform: scale(2,1);
+  -ms-transform: scale(2,1);
+  -webkit-transform: scale(2,1);
+}
+
+.replay {
+  color: #0f0;
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  left: 148px;
+}
+
+.replay_maze {
+  top: 44px;
+}
+
+.replay_battle2 {
+  top: 73px;
+}
+
+.img_left:hover .replay, .img_right:hover .replay {
+  visibility: visible;
+}
+
+.content_header {
   font-size: large;
   font-weight: bold;
   float: left;
   margin-left: 90px;
 }
 
-.content_main
-{
+.content_main {
   width: 525px;
   float: right;
   margin-right: 90px;
 }
 
-.content_main ul
-{
+.content_main ul {
   margin-top: 0;
   padding-left: 0;
 }
 
-.content_video
-{
+.content_video {
   width: 525px;
   float: right;
   margin-right: 90px;
@@ -148,62 +174,53 @@ p a, li a
   margin-top: .5em;
 }
 
-.news_main
-{
+.news_main {
   width: 525px;
   float: right;
   margin-right: 90px;
 }
 
-.news_main ul
-{
+.news_main ul {
   margin-bottom: 10px;
   margin-top: 0;
   padding-left: 1.5em;
 }
 
-.install_main
-{
+.install_main {
   width: 525px;
   float: right;
   margin-right: 90px;
 }
 
-.install_main ul
-{
+.install_main ul {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.faq_q
-{
+.faq_q {
   font-size: large;
   font-style: italic;
   float: left;
   margin-left: 90px;
 }
 
-.faq_a
-{
+.faq_a {
   width: 525;
   float: right;
   margin-right: 90px;
 }
 
-.faq_a ul
-{
+.faq_a ul {
   margin-top: 0;
 }
 
-.terminal_text
-{
+.terminal_text {
   margin: 10px -50px 10px 20px;
   line-height: 1.1em;
 }
 
 /* Thanks http://codepo8.github.com/css-fork-on-github-ribbon/ ! */
-#forkongithub a
-{
+#forkongithub a {
   background:#000;
   color:#fff;
   text-decoration:none;
@@ -217,14 +234,12 @@ p a, li a
   transition:0.5s;
 }
 
-#forkongithub a:hover
-{
+#forkongithub a:hover {
   background:#000;
   color:#fff;
 }
 
-#forkongithub a::before, #forkongithub a::after
-{
+#forkongithub a::before, #forkongithub a::after {
   content:"";
   width:100%;
   display:block;
@@ -240,10 +255,8 @@ p a, li a
   top:auto;
 }
 
-@media screen and (min-width:640px)
-{
-  #forkongithub
-  {
+@media screen and (min-width:640px) {
+  #forkongithub {
     position:absolute;
     display:block;
     top:0;
@@ -253,7 +266,7 @@ p a, li a
     height:200px;
   }
 
-  #forkongithub a{
+  #forkongithub a {
     width:200px;
     position:absolute;
     top:60px;

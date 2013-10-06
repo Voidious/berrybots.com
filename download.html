@@ -24,15 +24,15 @@
   </div>
   <div class="content_main">
     <ul>
-      <li><a href="files/berrybots_rpi_1.2.0.tar.gz">BerryBots v1.2.0 for Raspberry Pi</a> (Raspbian "wheezy", 392 KB)</li>
-      <li><a href="files/berrybots_osx_1.2.0.zip">BerryBots v1.2.0 for Mac OS X</a> (10.7 or later, 8.2 MB)</li>
-      <li><a href="files/berrybots_windows_1.2.0.zip">BerryBots v1.2.0 for Windows</a> (4.7 MB)</li>
-      <li>BerryBots v1.2.0 for Linux:
+      <li><a href="files/berrybots_rpi_1.3.0.tar.gz">BerryBots v1.3.0 for Raspberry Pi</a> (Raspbian "wheezy", 392 KB)</li>
+      <li><a href="files/berrybots_osx_1.3.0.zip">BerryBots v1.3.0 for Mac OS X</a> (10.7 or later, 8.2 MB)</li>
+      <li><a href="files/berrybots_windows_1.3.0.zip">BerryBots v1.3.0 for Windows</a> (4.7 MB)</li>
+      <li>BerryBots v1.3.0 for Linux:
         <ul style="padding-left: 1.5em;">
-          <li><a href="files/berrybots_ubuntu-64bit_1.2.0.tar.gz">Ubuntu 64-bit</a> (3.4 MB)</li>
-          <li><a href="files/berrybots_ubuntu-32bit_1.2.0.tar.gz">Ubuntu 32-bit</a> (3.4 MB)</li>
-          <li><a href="files/berrybots_fedora-64bit_1.2.0.tar.gz">Fedora 64-bit</a> (3.4 MB)</li>
-          <li><a href="files/berrybots_mageia-64bit_1.2.0.tar.gz">Mageia 64-bit</a> (3.9 MB)</li>
+          <li><a href="files/berrybots_ubuntu-64bit_1.3.0.tar.gz">Ubuntu 64-bit</a> (3.4 MB)</li>
+          <li><a href="files/berrybots_ubuntu-32bit_1.3.0.tar.gz">Ubuntu 32-bit</a> (3.4 MB)</li>
+          <li><a href="files/berrybots_fedora-64bit_1.3.0.tar.gz">Fedora 64-bit</a> (3.4 MB)</li>
+          <li><a href="files/berrybots_mageia-64bit_1.3.0.tar.gz">Mageia 64-bit</a> (3.9 MB)</li>
           <li>Or you can
           <a href="http://berrybots.com/wiki/Compiling_BerryBots_on_Linux">compile BerryBots yourself</a>.
            </li>
@@ -45,7 +45,7 @@
   </div>
   <div class="content_main">
     <ul>
-      <li><a href="files/berrybots_src_1.2.0.zip">BerryBots v1.2.0 full source</a> (3.7 MB)</li>
+      <li><a href="files/berrybots_src_1.3.0.zip">BerryBots v1.3.0 full source</a> (3.7 MB)</li>
       <li><a href="https://github.com/Voidious/BerryBots">GitHub: BerryBots repository</a></li>
       <li><a href="http://berrybots.com/wiki/Category:Compiling_BerryBots">Instructions for Compiling BerryBots</a></li>
     </ul>
@@ -58,17 +58,18 @@
     <div class="terminal_text">
       <code>
       cd ~<br>
-      tar xfv berrybots_rpi_1.2.0.tar.gz
+      tar xfv berrybots_rpi_1.3.0.tar.gz
       </code>
     </div>
     <p>This will create a <code>berrybots</code> subdirectory containing the
-    binaries, font, and sample ships and stages. You can view usage instructions
+    binaries, resources, and sample programs. You can view usage instructions
     by running <code>berrybots.sh</code> with no arguments:</p>
     <div class="terminal_text">
       <code>
       ./berrybots.sh<br>
       Usage:<br>
-      &nbsp;&nbsp;berrybots.sh [-nodisplay] &lt;stage.lua&gt; &lt;bot1.lua&gt; [&lt;bot2.lua&gt; ...]<br>
+      &nbsp;&nbsp;berrybots.sh [-nodisplay] [-savereplay] &lt;stage.lua&gt; \<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;bot1.lua&gt; [&lt;bot2.lua&gt; ...]<br>
       &nbsp;&nbsp;OR<br>
       &nbsp;&nbsp;berrybots.sh -packstage &lt;stage.lua&gt; &lt;version&gt;<br>
       &nbsp;&nbsp;OR<br>
@@ -90,21 +91,20 @@
     Installing: Mac / Linux / Windows
   </div>
   <div class="install_main">
-    <p>On these platforms, BerryBots is run through a graphical interface (GUI).
-    Launching the app is slightly different on each platform, but otherwise it
-    functions almost identically on all three.
+    <p>On these platforms, BerryBots has a graphical interface (GUI). Launching
+      the app is slightly different on each, but otherwise it works the same.
     <ul>
-      <li><strong>Mac OS X:</strong> Drop the .app into your Applications folder
-      and run it. The first time, you'll need to select a base directory for
-      BerryBots. This is where ships and stages will be located, and the API
-      docs, sample ships, and sample stages will be copied into subdirectories.
-      BerryBots supports Mac OS X 10.7 (Lion) or later.
+      <li><strong>Mac OS X:</strong> Drop the app into your Applications folder.
+      The first time you run it, you'll need to select a base directory for
+      BerryBots. This is where files like ships, stages, and replays will be
+      stored. The API docs, sample ships, and sample stages will be copied into
+      subdirectories. BerryBots supports Mac OS X 10.7 (Lion) or later.
       </li>
       <li><strong>Linux / Windows:</strong> Unzip where ever you like and run
       <code>berrybots.sh</code> (Linux) or <code>BerryBots.exe</code> (Windows).
-      Ships and stages are loaded from the <code>bots</code> and
-      <code>stages</code> subdirectories. API documentation is in the
-      <code>apidoc</code> subdirectory.</li>
+      Ships, stages, replays, and API documentation are stored in
+      subdirectories.
+      </li>
     </ul>
     </p>
   </div>
@@ -118,43 +118,45 @@
     <div class="terminal_text">
       <code>
       cd ~<br>
-      unzip berrybots_src_1.2.0.zip<br>
+      unzip berrybots_src_1.3.0.zip<br>
       cd berrybots<br>
       make rpi
       </code>
     </div>
-    <p>This will take 15-20 minutes to complete.</p>
+    <p>This will take about 20 minutes to complete.</p>
   </div>
   <div class="content_header">
     Compiling from source: Mac / Linux / Windows
   </div>
   <div class="install_main">
     <p>To compile BerryBots on these platforms, you'll need g++ (or another C++
-    compiler). On Mac OS X, you can get it from the XCode developer tools, which
+    compiler).
+      <ul>
+        <li>On Mac OS X, you can get it from the XCode developer tools, which
     is on the OS install CD and
-    <a href="https://developer.apple.com/xcode/">in the Mac App Store</a>.
-    On most Linux systems, you probably already have it. On Windows, you can use
-    <a href="http://www.mingw.org/">MinGW</a>.</p>
+    <a href="https://developer.apple.com/xcode/">in the Mac App Store</a>.</li>
+        <li>On most Linux systems, you probably already have it.</li>
+        <li>On Windows, you can use <a href="http://www.mingw.org/">MinGW</a>.</li>
+      </ul>
+    </p>
     <p>The build process on each platform is slightly different, but the high
     level steps are the same.
       <ul>
-        <li>Download <a href="http://www.sfml-dev.org">SFML 2.0</a> libraries or
+        <li>Download <a href="http://www.sfml-dev.org">SFML 2.x</a> libraries or
         compile them from source.</li>
-        <li>Download <a href="http://www.wxwidgets.org">wxWidgets 2.9.4</a>
+        <li>Download <a href="http://www.wxwidgets.org">wxWidgets 2.9.x</a>
         libraries or compile them from source.</li>
         <li>Compile <a href="http://www.libarchive.org">libarchive</a> from
         source, linking with <a href="http://www.zlib.net">zlib</a>.</li>
         <li>Download the BerryBots source code and compile it, linking against
-        the above 3 libraries. A modified version of
-        <a href="http://luajit.org">LuaJIT</a> is part of the BerryBots source
-        tree and is compiled/linked by the BerryBots build process</li>
+        the above 3 libraries.</li>
       </ul>
     </p>
     <p>For detailed instructions, see the following wiki articles:
       <ul>
-        <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Mac_OS_X_command_line">Compiling BerryBots on Mac OS X command line</a></li>
         <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Linux">Compiling BerryBots on Linux</a></li>
         <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Windows_with_MinGW">Compiling BerryBots on Windows with MinGW</a></li>
+        <li><a href="http://berrybots.com/wiki/index.php?title=Compiling_BerryBots_on_Mac_OS_X_command_line">Compiling BerryBots on Mac OS X command line</a></li>
         <li><a href="http://berrybots.com/wiki/Compiling_BerryBots_app_on_Mac_OS_X_with_XCode">Compiling BerryBots app on Mac OS X with XCode</a></li>
       </ul>
     </p>

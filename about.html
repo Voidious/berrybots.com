@@ -31,15 +31,15 @@
   <div class="content_main">
     <p>BerryBots is a programming game. A player programs a ship that moves
     around the stage, sees gameplay events, and shoots at other ships. The
-    <a href="/apidoc">APIs</a> and game rules are simple and it's easy to get
+    <a href="/apidoc">API</a> and game rules are simple and it's easy to get
     started in just a few minutes.</p>
     <p>The stage is also configured and controlled by a program, so the gameplay
     on every stage is different. The
     <a href="/wiki/index.php?title=Category:Sample_Stages">sample stages</a>
-    include mazes, jousting, a race track, several classic arcade style games,
-    and a few battle stages. These only scratch the surface of what can be
-    done with the stage API, but you could stay busy for quite a while just
-    writing ships for the sample stages.</p>
+    include mazes, jousting, a race track, several arcade style games,
+    and a few battle stages. You can program custom stages for tournaments or to
+    focus on certain types of programming problems, like pathfinding or
+    classification algorithms.</p>
   </div>
   <div class="content_header">
     Background
@@ -51,22 +51,22 @@
     <a href="http://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a>,
     and many other great programming games. You "play" these games by writing
     code to control a bot that moves around the screen. They're often used in
-    educational settings because they're a great way to make learning to code a 
-    fun and interesting experience.</p>
+    educational settings because they make learning to code a fun and
+    interesting experience.</p>
     <p>BerryBots' origins can be traced back to
     <a href="http://robowiki.net/?Raspberry_Pi">a discussion at the RoboWiki</a>,
-    a plea from a legendary Robocoder to take Robocode and package it nicely for
-    the Raspberry Pi, or perhaps create a new lightweight
-    version of it. At the time, it sounded like a daunting task. A few months
-    later, I got Raspberry Pi fever. A few folks tried running Robocode on the
-    Rpi and saw pretty bad performance. I ordered one to try writing a new
-    programming game with the Raspberry Pi as the target platform.</p>
+    a request from a legendary Robocoder to take Robocode and package it for the
+    Raspberry Pi, or perhaps create a new, lightweight version. It sounded like a
+    daunting task. A few months later, I got Raspberry Pi fever. People tried
+    running Robocode on the Pi and saw pretty bad performance. I ordered one to
+    try writing a new programming game with the Raspberry Pi as the target
+    platform.</p>
     <p>I began with the goal of creating a simplified, Robocode-esque game with
     good performance on the Raspberry Pi. What I ended up with is a lightweight,
-    flexible game that runs plenty fast on the Raspberry Pi, has simpler APIs
-    and game rules than Robocode, but also introduces some gameplay elements
-    that add a lot of variety and gameplay depth, like walls, programmable
-    stages, simpler team support, and a secondary weapon.</p>
+    flexible game that runs fast enough for the Raspberry Pi, has simpler APIs
+    and game rules than Robocode, but also introduces a few elements that add a
+    lot of gameplay depth, like walls on the playing field, programmable stages,
+    simpler team support, and a secondary weapon.</p>
   </div>
   <div class="content_header">
     Open source
@@ -87,25 +87,23 @@
       awesome computer that inspired BerryBots.</li>
       <li><a href="http://www.lua.org">Lua</a> and
       <a href="http://luajit.org">LuaJIT</a>: The programming language used to
-      write ships and stages.</li>
+      write BerryBots ships and stages.</li>
       <li><a href="http://www.sfml-dev.org">SFML</a>: A cross-platform OpenGL
-      graphics library used for the main BerryBots game graphics on
-      Mac / Linux / Windows.</li>
+      graphics library used for the game graphics on Mac, Linux, and Windows.</li>
       <li><a href="http://www.wxwidgets.org">wxWidgets</a>: A cross-platform
-      widgets library used for the full GUI version of BerryBots on
-      Mac / Linux / Windows.</li>
+      widgets library used for the GUI on Mac, Linux, and Windows.</li>
       <li><a href="https://github.com/ajstarks/openvg">ajstarks' OpenVG library</a>
       for Raspberry Pi: The graphics library I used for the BerryBots prototype.
-      BerryBots still uses some of it, mainly the font support and OpenGL
-      init/cleanup code on the Raspberry Pi.</li>
+      Some of it is still used on the Raspberry Pi - mainly the font support and
+      OpenGL init/cleanup code.</li>
       <li><a href="http://www.libarchive.org/">libarchive</a> and
       <a href="http://www.zlib.net">zlib</a>: Support for packaging bots as
-      tarred / gzipped (.tar.gz) files in the GUI version.</li>
+      tarred / gzipped (.tar.gz) files.</li>
       <li><a href="http://kineticjs.com">KineticJS</a>: An HTML5 Canvas
       Javascript framework used for the BerryBots replay graphics.</li>
       <li><a href="http://robocode.sourceforge.net">Robocode</a>: BerryBots is
       far from a Robocode clone, but I've spent the last 7 years addicted to
-      this amazing programming game - BerryBots is certainly influenced by
+      this amazing programming game... BerryBots was definitely influenced by
       Robocode and would never have existed without it.</li>
     </ul>
     </p>
