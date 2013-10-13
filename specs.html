@@ -43,26 +43,26 @@
     <p>Ships start the game and each round with 100 energy (health).</p>
     <p>Each turn, a ship receives data about enemy ships and gameplay events
     based on what it can see via line of sight. Then it can choose to
-    fire its thruster, fire its laser gun, and/or fire its torpedo gun.
+    fire a thruster, laser, and/or torpedo.
     </p>
-    <p>Firing the thruster applies a force vector to the ship's current
-    trajectory. From a stand-still, this vector becomes the ship's speed and
-    heading. If the ship is already moving, its speed and heading will be
-    slightly modified. To stop, one would use this until speed is 0:</p>
+    <p>Firing a thruster alters the ship's trajectory. From a stand-still, the
+    thruster force becomes the ship's speed and heading. If the ship is already
+    moving, its speed and heading will be slightly modified. To stop, you would
+    use this until speed is 0:</p>
     <div class="terminal_text">
       <code>ship:fireThruster(ship:heading() + math.pi, ship:speed())</code>.
     </div>
-    <p>A laser can be fired in any direction. On the tick that it's fired, it's
-    a line segment from distance 25 to distance 50 from the ship's center along
-    the specified heading. A laser moves at a speed of 25 per tick. It
+    <p>A laser can be fired in any direction. A laser moves at a speed of 25 per
+    tick and advances an extra 25 on the first tick after being fired. It
     dissipates when it hits a wall or inflicts 4 damage when it hits an enemy
     ship. A ship can fire another laser after 5 ticks.</p>
     <p>A torpedo can be fired in any direction and with a specified distance. It
-    moves at a speed of 12 and moves through walls and ships until it reaches
-    the specified distance. Then it explodes with a blast radius of 100. It does
-    a maximum of 30 damage and 30 knockback at the center of the blast, scaling
-    to 0 at the edge of the blast radius. A ship can fire another torpedo after
-    100 ticks.</p>
+    moves at a speed of 12 and moves an extra 12 on the first tick after being
+    fired. It moves through walls and ships until it reaches the specified
+    distance, then explodes with a blast radius of 100. It does a maximum of 30
+    damage and 30 knockback at the center of the blast, scaling to 0 at the edge
+    of the blast radius. A ship can fire another torpedo after 100 ticks.
+    </p>
     <p>Be careful: a ship can be hit by its own lasers and torpedos!</p>
   </div>
   <div class="content_header">
@@ -71,8 +71,8 @@
   <div class="content_main">
     <p>When a ship hits a wall, it bounces off. The wall absorbs half the force
     the ship exerts against the wall. If it just grazes the wall, this is only
-    a small percentage of its momentum; if it slams directly into a wall, it
-    will lose half of its total momentum. It doesn't take any damage.</p> 
+    a small percentage of its speed; if it slams directly into a wall, it will
+    lose half of its speed. It doesn't take any damage.</p> 
     <p>When two ships collide, they each transfer momentum to the other ship.
     No momentum is lost and neither ships take damage.</p>
   </div>

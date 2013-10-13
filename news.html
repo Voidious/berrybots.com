@@ -27,25 +27,21 @@
     <ul>
       <li>Replays!
       <ul>
+        <li>Replays include game graphics, video player controls, output
+        consoles, and full results.</li>
         <li>Replays are saved as HTML files. View them locally or post them
         online to show off your creations. Rendering is HTML5 Canvas and
         Javascript using <a href="http://kineticjs.com">KineticJS</a>.</li>
-        <li>Replays include game graphics, video player controls, output
-        consoles, and full results.</li>
-        <li>Replay data collection is always on. It's very fast and uses very little memory.
         <li>Sample:
         <a href="replays/battle2-2013.10.05-17.03.40.html">battle2-2013.10.05-17.03.40.html</a></li>
-        <li>Video: <a href="http://www.youtube.com/watch?v=hTNzKPgOXQA">BerryBots replays</a></li>
+        <li>Overview video: <a href="http://www.youtube.com/watch?v=hTNzKPgOXQA">BerryBots replays</a></li>
         <li>How to save replays:
         <ul>
           <li>GUI: The results dialog now contains "View Replay" and "Save
           Replay" buttons.</li>
           <li>Raspberry Pi: Pass <code>-savereplay</code> to berrybots.sh.</li>
-          <li>Game Runner API: After calling
-          <code>MatchRunner.nextResult()</code>, a call to
-          <code>MatchRunner.saveReplay()</code> will save the replay for that
-          result.</li>
           <li>Sample Game Runners: Check the "Save replays" checkbox.
+          <li>Game Runner API: Call <code>MatchRunner.saveReplay()</code>.</li>
         </ul></li>
       </ul></li>
       <li>Revamped stage preview. Larger image and more info, like stage size,
@@ -55,8 +51,8 @@
       <ul>
         <li>Added <code>MatchRunner.saveReplay()</code> to save the replay of
         the last result returned by <code>MatchRunner.nextResult()</code>.</li>
-        <li>Added <code>RunnerForm.addCheckbox()</code> to allow boolean input
-        from users (e.g., "Save replays").</li>
+        <li>Added <code>RunnerForm.addCheckbox()</code> to allow boolean form
+        inputs (e.g., "Save replays").</li>
       </ul></li>
       <li>Updated to LuaJIT 2.0.2, SFML 2.0+, and wxWidgets 2.9.5.</li>
       <li>Added a 20 lap limit to RaceTrack sample stage.</li>
@@ -66,6 +62,8 @@
       <li>Bug fix: Crash when closing Error Console on Linux/GTK.</li>
       <li>Bug fix: Incorrectly calculating per-ship scores in batchduels sample
       runner.</li>
+      <li>Bug fix: Rendering negative energy in dock for destroyed ships.</li>
+      <li>Bug fix: Debug gfx circles are too coarse (30 sides).</li>
     </ul>
     <p><a name="1.2.0"></a><strong>April 21, 2013: BerryBots v1.2.0</strong></p>
     <ul>
