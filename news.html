@@ -30,8 +30,12 @@
         <li>Replays are saved as HTML files. View them locally or post them
         online to show off your creations. Rendering is HTML5 Canvas and
         Javascript using <a href="http://kineticjs.com">KineticJS</a>.</li>
-        <li>Replays include: game graphics, video player controls, output
+        <li>Replays include game graphics, video player controls, output
         consoles, and full results.</li>
+        <li>Replay data collection is always on. It's very fast and uses very little memory.
+        <li>Sample:
+        <a href="replays/battle2-2013.10.05-17.03.40.html">battle2-2013.10.05-17.03.40.html</a></li>
+        <li>Video: <a href="http://www.youtube.com/watch?v=hTNzKPgOXQA">BerryBots replays</a></li>
         <li>How to save replays:
         <ul>
           <li>GUI: The results dialog now contains "View Replay" and "Save
@@ -43,18 +47,10 @@
           result.</li>
           <li>Sample Game Runners: Check the "Save replays" checkbox.
         </ul></li>
-        <li>Sample: <a href="replays/battle2-2013.10.05-17.03.40.html">battle2-2013.10.05-17.03.40.html</a></li>
       </ul></li>
-      <li>Revamped stage preview.
-      <ul>
-        <li>Bigger image and more stage info, like dimensions, team size,
-        and stage ships.</li>
-        <li>Powered by a webview using the replay rendering engine.</li>
-        <li>Note: On Windows, the visual preview is behind a second click that
-        opens in a web browser. Due to Internet Explorer's aggressive filtering
-        of "active content", it won't load in the preview pane. Sorry!</li>
-        <li>Sample: <a href="images/maze2_preview.png">maze2_preview.png</a></li>
-      </ul></li>
+      <li>Revamped stage preview. Larger image and more info, like stage size,
+      team size, and stage ships.
+      (<a href="images/maze2_preview.png">Sample</a>)</li>
       <li>Game Runner API updates.
       <ul>
         <li>Added <code>MatchRunner.saveReplay()</code> to save the replay of
@@ -62,7 +58,7 @@
         <li>Added <code>RunnerForm.addCheckbox()</code> to allow boolean input
         from users (e.g., "Save replays").</li>
       </ul></li>
-      <li>Updated to LuaJIT 2.0.2, SFML 2.1, and wxWidgets 2.9.5.</li>
+      <li>Updated to LuaJIT 2.0.2, SFML 2.0+, and wxWidgets 2.9.5.</li>
       <li>Added a 20 lap limit to RaceTrack sample stage.</li>
       <li>Bug fix: Crash when switching between Game Runner and normal matches.
       </li>
@@ -201,17 +197,7 @@
   </div>
   <div class="content_header">
     Coming soon
-  </div>
-  <div class="content_main">
-    <p>
-    <ul>
-      <li>Battle runner API for running batch battles and competitions</li>
-      <li>Granular results handling</li>
-      <li>Configurable CPU usage limits</li>
-    </ul>
-    </p>
-  </div>
-  <div id="footer">
+  </div>  <div id="footer">
     <hr>
     <br>
     BerryBots up in your social medias!
