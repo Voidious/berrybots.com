@@ -23,26 +23,21 @@
     What is BerryBots?
   </div>
   <div class="faq_a">
-    <p>BerryBots is a programming game. A player writes a Lua program to control a
-    ship that competes in a challenge, or against other ships. The stage is also a
-    Lua program, which controls many aspects of the gameplay. It decides when
-    rounds end, when the match ends, who wins, and all scoring / statistics.</p>
-    <p>BerryBots should work well for beginner programmers. It has simple,
-    intuitive APIs and game rules, as wells as sample programs to get started. It
-    also allows for very sophisticated ships and stages, where seasoned software
-    developers can explore interesting programming challenges or compete with
-    each other.</p>
+    <p>BerryBots is a programming game. You write a Lua program to control a
+    ship that competes in challenges or battles against other ships. The stage
+    is also a Lua program and it controls many aspects of the gameplay.</p>
   </div>
   <div class="faq_q">
     How do I write a bot?
   </div>
   <div class="faq_a">
-    <p>Ships are coded in Lua, a lightweight and flexible programming language
-    designed for just this type of application, where one program is embedded
-    into another. A few resources to get started:
+    <p>User programs are coded in Lua, a lightweight and flexible programming
+    language designed for this type of application, where one program is
+    embedded into another. A few resources to get started:
     <ul>
       <li><a href="http://berrybots.com/wiki/index.php?title=Category:Samples">BerryBots sample programs</a></li>
       <li><a href="/apidoc/">BerryBots API docs</a></li>
+      <li><a href="http://www.youtube.com/watch?v=2WQnYSs0cl8">BerryBots overview video</a></li>
       <li><a href="http://www.lua.org/manual/5.1/">Lua 5.1 manual</a></li>
       <li><a href="http://lua-users.org/wiki/TutorialDirectory">Lua-users Tutorial Directory</a>
       </li>
@@ -55,18 +50,13 @@
     <p>A ship program can...
     <ul>
       <li>...move a ship by firing its thrusters.</li>
-      <li>...fire a ship's lasers at enemy ships. Lasers are fast, weak, and
-      fly until they hit a ship or a wall.</li>
-      <li>...fire a ship's torpedos. Torpedos are strong, slow, move a specific
-      distance, move through walls and ships, and then explode, doing damage
-      and knockback to all ships within the blast radius.</li>
-      <li>...see other ships and certain gameplay events in the field of
-      vision of the ships it controls (i.e., no walls in the way).</li>
+      <li>...fire a ship's laser gun (primary weapon).</li>
+      <li>...fire a ship's torpedo gun (secondary weapon).</li>
+      <li>...see other ships and certain gameplay events, based on line of
+      sight (i.e., not blocked by walls).</li>
       <li>...control all ships on a team from a single program, with all ships'
-      combined vision. No need for communication between ships to coordinate
-      strategy or share information.
-      <li>...draw debugging graphics to the screen for easier development and
-      troubleshooting.</li>
+      combined vision.
+      <li>...draw debugging graphics to the screen.</li>
       </li>
     </ul>
     </p>
@@ -78,20 +68,13 @@
     <p>A stage program can...
     <ul>
       <li>...configure the stage size, walls, zones, starting points, team size,
-      and battle mode, and pre-load stage ships.</li>
-      <li>...monitor everything in the game, decide when a round ends, when the
+      battle mode, and stage ships.</li>
+      <li>...monitor everything in the game, decide when rounds end, when the
       game is over, and who wins.</li>
-      <li>...modify almost everything about ships, including destroying ships,
-      reviving ships, moving ships, modifying a ship's speed, heading, or
-      energy, and disabling or enabling a ship's thrusters, laser gun, or
-      torpedo gun.</li>
-      <li>...send custom events to ships to coordinate stage ships or
-      communicate gameplay events to player ships.</li>
-      <li>...draw text on the screen, such as a scoreboard, number of extra
-      lives, congrats when a ship scores a point, or a taunt when a ship is
-      destroyed.</li>
-      <li>...draw debugging graphics to the screen for easier development and
-      troubleshooting.</li>
+      <li>...modify almost everything about ships.</li>
+      <li>...send custom events to ships.</li>
+      <li>...draw text on the screen.</li>
+      <li>...draw debugging graphics to the screen.</li>
     </ul>
     </p>
   </div>
@@ -102,9 +85,9 @@
     <p>I'm a huge fan of Robocode. I've probably spent more time writing
     Robocode bots than anyone ever. Robocode was inspired by Robot Battle, which
     drew inspiration from earlier tank battle games... So BerryBots was
-    certainly influenced by Robocode and all of its predecessors. I think
-    BerryBots brings some cool new stuff to the table and I hope you'll agree.
-    (And by all means, check out Robocode and all those other games, too!)</p>
+    certainly influenced by Robocode and its predecessors. I think BerryBots
+    brings some cool new stuff to the table. I hope you'll agree.
+    (And by all means, check out Robocode and those other games, too!)</p>
   </div>
   <div class="faq_q">
     What makes BerryBots special?
@@ -112,28 +95,13 @@
   <div class="faq_a">
     <p>First, it's designed from the ground up to run on the Raspberry Pi. You
     don't need anything besides what comes in Raspbian to get started writing
-    and running your bots with a terminal and a text editor. The game engine and
-    the Lua programming language are pretty fast and the 2D graphics are GPU
-    accelerated with OpenVG. You should have no problem running battles with a
-    few moderately complex bots at a smooth 60 frames per second.</p>
-    <p>I've gone to great lengths to make BerryBots especially welcoming to
-    beginners. Everything about the ship API and game rules is designed to be as
-    simple and intuitive as possible. I hope that folks teaching intro
-    programming classes, especially on the Raspberry Pi, will consider checking
-    out BerryBots. And it should scale smoothly to novice, moderate and advanced
-    programmers, competing with each other in battle mode, race tracks, custom
-    stages, or designing gameplay on their own stages.</p>
-    <p>Perhaps the most unique aspect of BerryBots as compared to other
-    programming games is the programmable stage. The stage is a user written
-    program loaded at run time, just as ships are. In the stage program, you can
-    configure walls, zones, starting points, and pre-loaded ships designed for
-    whatever gameplay you have in mind for the stage. The stage gets a chance to
-    run code each tick, just as each bot does. It can monitor the game, move
-    ships around, change their speed or energy, destroy and revive ships, send
-    custom events to ships, write text to the screen, decide who wins and when
-    the round or match is over. The sample stages include mazes, a race track,
-    jousting, several arcade inspired single player games, as well as battle
-    stages designed for 1v1, free-for-all, or team battles. And these only
+    and running your bots with a terminal and a text editor. You should have no
+    problem running matches with a few moderately complex bots at a smooth 60
+    frames per second.</p>
+    <p>Perhaps the most unique aspect of BerryBots is the programmable stage.
+    The stage is a user written program loaded at run time, just as ships are.
+    The stage program dictates much of the BerryBots gameplay. You can see a
+    wide range of gameplay styles in the sample stages, and these only
     scratch the surface of what could be done with the stage API.</p>
   </div>
   <div class="faq_q">
@@ -177,12 +145,11 @@
       detailed explosions or anything photorealistic. Lasers and torpedos are
       not typical real world weapons. Ships don't "die", they are "destroyed"
       (and can be revived!).</li>
-      <li>By default, ships can only move, A stage has to enable battle mode to
-      allow ships to shoot at each other. A lot can be done with battle mode
-      off. Many of the sample stages do not use battle mode - their gameplay is
-      entirely based on ships moving around the stage. If you're averse to
-      spaceships shooting each other, limit yourself (or your students / children)
-      to these types of stages.</li>
+      <li>By default, ships can only move, A stage has to enable "battle mode"
+      to allow ships to shoot at each other. A lot can be done with battle mode
+      off - many of the sample stages do not use battle mode. If you're averse
+      to spaceships shooting each other, limit yourself (or your students /
+      children) to these types of stages.</li>
     </ul>
     </p>
   </div>
