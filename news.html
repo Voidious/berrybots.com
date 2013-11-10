@@ -20,10 +20,32 @@
     <span class="menu_item"><a href="/wiki">Wiki</a></span>
   </div>
   <div class="content_header">
-    <a name="1.3.0"></a>BerryBots News
+    <a name="1.3.1"></a>BerryBots News
   </div>
   <div class="news_main">
-    <p><strong>October 7, 2013: BerryBots v1.3.0</strong></p>
+
+
+    <p><strong>November 10, 2013: BerryBots v1.3.1</strong></p>
+    <ul>
+      <li>Linux binaries now in .deb (Debian/Ubuntu/Mint) and .rpm
+        (Fedora/openSUSE) packages.</li>
+      <li>Revamped build process with autoconf.</li>
+      <li>Tweaked torpedo blast graphics to more closely resemble torpedo blast
+        behavior.</li>
+      <li>Added "Restart" button to results dialog.</li>
+      <li>Bug fix: Not always correctly propagating scores to ranks to winner.
+        (E.g., if you only set scores, ranks and winner should be deduced.)</li>
+      <li>Bug fix: Torpedo debris not showing in replays.</li>
+      <li>Bug fix: Line breaks in output consoles breaks replay data parsing.
+        </li>
+      <li>Bug fix: Multiple spaces render as one space in replay output
+        consoles, mangling ASCII art.</li>
+      <li>Bug fix: Crash on Mac OS X when launching New Match with a mouse
+        click after first match is launched with hotkey (cmd-M).</li>
+      <li>Bug fix: Lua print() with a boolean value doesn't work.</li>
+      <li>Mac app is now signed (for Gatekeeper).</li>
+    </ul>
+    <p><a name="1.3.0"></a><strong>October 7, 2013: BerryBots v1.3.0</strong></p>
     <ul>
       <li>Replays!
       <ul>
