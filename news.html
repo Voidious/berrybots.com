@@ -21,12 +21,49 @@
     <span class="menu_item"><a href="/wiki">Wiki</a></span>
   </div>
   <div class="content_header">
-    <a name="1.3.1"></a>BerryBots News
+    <a name="1.3.2"></a>BerryBots News
   </div>
   <div class="news_main">
-
-
-    <p><strong>November 10, 2013: BerryBots v1.3.1</strong></p>
+    <p><strong>December 3, 2013: BerryBots v1.3.2</strong></p>
+    <ul>
+      <li>New web UI. Try BerryBots in a browser at
+        <a href="http://playberrybots.com">PlayBerryBots.com</a>.</li>
+      <li>Game Runner updates.
+      <ul>
+        <li>Added file access to ships and stages directories from
+          <tt>RunnerFiles</tt>. This enables research that evaluates changes to
+          source code, like genetic algorithms.</li>
+        <li>Added <tt>RunnerForm.reset()</tt>, to clear all fields and values.</li>
+        <li>Added <tt>RunnerForm.addDropdown()</tt>, to choose from a set of
+          strings.</li>
+        <li>Added <a href="http://berrybots.com/wiki/MazerEvolver">MazerEvolver</a>
+          sample runner. It uses a genetic algorithm to evolve a ship to solve a
+          maze.</li>
+        <li>Added option for "Round-robin" seeding in simpletourney. All ships
+          face each other and overall win/loss determines bracket seeding.</li>
+        <li>Added win percentages to batchduels.</li>
+      </ul></li>
+      <li>Replay/web UI rendering changes.
+      <ul>
+        <li>Default to 0.5x speed (~30 fps), with options for 1x ("Bouncy")
+          and 20x ("Ludicrous") speeds.</li>
+        <li>Added restart button to playback controls.</li>
+        <li>Tweaked playback controls to be less intrusive on desktop browsers.</li>
+      </ul></li>
+      <li>Bug fix: Lua errors not being saved to replay output consoles.</li>
+      <li>Bug fix: Inaccurate API docs for <tt>TeamResult.stats</tt> table.
+        It's a map, not a list of tables. See example usage in
+        <a href="http://berrybots.com/wiki/batch1p">batch1p</a> or
+        <a href="http://berrybots.com/wiki/batchduels">batchduels</a>.</li>
+      <li>Bug fix: Writing extra null chars to end of file from
+        <tt>RunnerFiles.writeFile()</tt> on Windows.
+      <li>Bug fix: "make install" broken when SFML is already installed on
+        system. (Thanks to cortezthekiller for the bug report and patch.)</li>
+      <li>Bug fix: Crash when calling <tt>RunnerForm.ok()</tt> multiple times.</li>
+      <li>Bug fix: Crash when printing empty string with
+        <tt>Admin.drawText()</tt> or <tt>DebugGfx.drawText()</tt>.</li>
+    </ul>
+    <p><a name="1.3.1"></a><strong>November 10, 2013: BerryBots v1.3.1</strong></p>
     <ul>
       <li>Linux binaries now in .deb (Debian/Ubuntu/Mint) and .rpm
         (Fedora/openSUSE) packages.</li>
