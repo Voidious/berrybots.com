@@ -219,6 +219,22 @@ p a, li a {
   line-height: 1.1em;
 }
 
+.league_header {
+  font-size: 130%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.league_main {
+  width: 525px;
+  float: right;
+  margin-right: 90px;
+}
+
+.league_main p {
+  margin: 0.5em 0;
+}
+
 /* Thanks http://codepo8.github.com/css-fork-on-github-ribbon/ ! */
 #forkongithub a {
   background:#000;
