@@ -18,12 +18,12 @@ h2 {
 
 p {
   margin: 0.5em 0;
-  line-height: 1.3em;
+  line-height: 1.35em;
 }
 
 li {
   margin: 0.25em;
-  line-height: 1.3em;
+  line-height: 1.35em;
 }
 
 p a, li a {
@@ -74,16 +74,14 @@ p a, li a {
 
 .home_content {
   display: inline-block;
-  font-size: 115%;
+  margin: 10px 0;
+  font-size: 1.1em;
 }
 
 .home_content p {
-  padding-top: 0.5em;
-  margin-bottom: 0;
-}
-
-.home_content ul {
-  font-size: 0.9em;
+  padding-top: 0.25em;
+  margin: 0.25em 0;
+  line-height: 1.4em;
 }
 
 .text_left {
