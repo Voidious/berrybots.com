@@ -42,9 +42,44 @@
     <span class="menu_item"><a href="/wiki">Wiki</a></span>
   </div>
   <div class="content_header">
-    <a name="littleleague"></a>BerryBots News
+    <a name="1.3.3"></a>BerryBots News
   </div>
   <div class="news_main">
+
+    <p><strong>October 12, 2015: BerryBots v1.3.3</strong></p>
+    <ul>
+      <li>High-resolution ("Retina") graphics support on Mac OS X - game
+        graphics, stage previews, and button icons.</li>
+      <li>Improved game speed tuner:
+      <ul>
+        <li>Default to 30 fps, with additional grooves at 15 fps and 60 fps.
+          </li>
+        <li>Keyboard shortcuts for slow down and speed up ("[" and "]").</li>
+        <li>Persist speed setting while app is running.</li>
+        <li>Higher max speed.</li>
+      </ul></li>
+      <li>UI tweaks:
+      <ul>
+        <li>New Match dialog got a minor facelift.</li>
+        <li>Output consoles now larger initial size.</li>
+        <li>Reuse main game window across matches.</li>
+        <li>Put replay controls under results dialog and output consoles.</li>
+      </ul></li>
+      <li>Allow ships to change names and colors during the match if debug gfx
+        are enabled.</li>
+      <li>Updated to LuaJIT 2.0.4, SFML 2.3.2, wxWidgets 3.0.2, and KineticJS
+        5.1.0.</li>
+      <li>Bug fix: Crash when starting (or restarting) a match if a bot has
+        compilation errors.</li>
+      <li>Bug fix: print() should match Lua's default behavior - supporting
+        multiple arguments and using <tt>tostring</tt>.</li>
+      <li>Bug fix: Start Match hotkey (alt-M) broken on Linux and Windows.</li>
+      <li>Bug fix: Packaging saves to wrong directories after changing base
+        directory.</li>
+      <li>Bug fix: Escape backslashes in replay text data (output consoles,
+        stage texts, ship / team names).</li>
+    </ul>
+
     <p><strong>August 6, 2015: The new PlayBerryBots.com</strong></p>
     <ul>
       <li>The new <a href="http://playberrybots.com">PlayBerryBots.com</a> is
@@ -55,7 +90,7 @@
         ground.
       </li>
     </ul>
-    <p><strong>January 26, 2014: BerryBots Little League</strong></p>
+    <p><a name="littleleague"></a><strong>January 26, 2014: BerryBots Little League</strong></p>
     <ul>
       <li>The <a href="littleleague.html">BerryBots Little League</a> is here!
         A new tourney every few weeks with a different stage or rule set. Get
@@ -63,6 +98,7 @@
         <a href="http://playberrybots.com/battle">PlayBerryBots.com/battle</a>.
       </li>
     </ul>
+
     <p><a name="1.3.2"></a><strong>December 3, 2013: BerryBots v1.3.2</strong></p>
     <ul>
       <li>New web UI. Try BerryBots in a browser at
@@ -102,6 +138,7 @@
       <li>Bug fix: Crash when printing empty string with
         <tt>Admin.drawText()</tt> or <tt>DebugGfx.drawText()</tt>.</li>
     </ul>
+
     <p><a name="1.3.1"></a><strong>November 10, 2013: BerryBots v1.3.1</strong></p>
     <ul>
       <li>Linux binaries now in .deb (Debian/Ubuntu/Mint) and .rpm
@@ -122,6 +159,7 @@
         click after first match is launched with hotkey (cmd-M).</li>
       <li>Bug fix: Lua print() with a boolean value doesn't work.</li>
     </ul>
+
     <p><a name="1.3.0"></a><strong>October 13, 2013: BerryBots v1.3.0</strong></p>
     <ul>
       <li>Replays!
@@ -164,6 +202,7 @@
       <li>Bug fix: Rendering negative energy in dock for destroyed ships.</li>
       <li>Bug fix: Debug gfx circles are too coarse (only 30 points).</li>
     </ul>
+
     <p><a name="1.2.0"></a><strong>April 21, 2013: BerryBots v1.2.0</strong></p>
     <ul>
       <li>Game Runner API to execute BerryBots matches and process the results.
@@ -196,6 +235,7 @@
       <li>Bug fix: Don't segfault when quitting from Package Ship or Package
       Stage dialogs on Linux.</li>
     </ul>
+
     <p><a name="1.1.4"></a><strong>April 7, 2013: BerryBots v1.1.4</strong></p>
     <ul>
       <li>Bug fix: World.touchedZone and World.touchedAnyZone fixed for ship
@@ -213,6 +253,7 @@
       you're on an older Mac and BerryBots crashes when you start a match, give
       this a try.</li>
     </ul>
+
     <p><a name="1.1.3"></a><strong>March 31, 2013: BerryBots v1.1.3</strong></p>
     <ul>
       <li>Document hard limit of 4096 of each type of debugging graphic. Print
@@ -223,6 +264,7 @@
       code. This was inadvertently causing GC never to run for some
       memory-intensive bots.</li>
     </ul>
+
     <p><a name="1.1.2"></a><strong>March 24, 2013: BerryBots v1.1.2</strong></p>
     <ul>
       <li>Display debris when a ship is hit by a torpedo. One particle of debris
@@ -241,6 +283,7 @@
       <li>Bug fix: Minor issue with random seeding for Lua states.</li>
       <li>Bug fix: Some lib path issues with build process on Mac OS X.</li>
     </ul>
+
     <p><a name="1.1.1"></a><strong>March 19, 2013: BerryBots v1.1.1</strong></p>
     <ul>
       <li>Graphical debugging for ships and stages. Watch the
@@ -250,6 +293,7 @@
       For now, only supports Mac, Linux, and Windows.</li>
       <li>Updated LuaJIT to 2.0.1.</li>
     </ul>
+
     <p><a name="1.1.0"></a><strong>March 11, 2013: BerryBots v1.1.0</strong></p>
     <ul>
       <li>Full GUI for Mac / Linux / Windows.
@@ -283,12 +327,14 @@
       </ul></li>
       <li>A fancy new <a href="http://www.youtube.com/watch?v=KkLB96sbAEo">overview video</a>.</li>
     </ul>
+
     <p><a name="1.0.1"></a><strong>January 18, 2013: BerryBots v1.0.1</strong></p>
     <ul>
       <li>Simplified the build process on all platforms.</li>
       <li>Fixed several issues with compiling under Linux (32-bit and 64-bit).</li>
       <li>Misc fixes to the sample ships and stages.</li>
     </ul>
+
     <p><a name="1.0.0"></a><strong>November 20, 2012: BerryBots v1.0.0 released - yay! =)</strong></p>
   </div>
   <div id="footer">
