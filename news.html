@@ -33,13 +33,10 @@
   <div id="menu_bar" align="center">
     <span class="menu_item"><a href="/">Home</a></span>
     <span class="menu_item"><a href="about.html">About</a></span>
-    <span class="menu_item"><a href="http://playberrybots.com">Try it</a></span>
     <span class="menu_item"><a href="download.html">Download</a></span>
     <span class="menu_item">News</span>
     <span class="menu_item"><a href="specs.html">Specs</a></span>
     <span class="menu_item"><a href="faq.html">FAQ</a></span>
-    <span class="menu_item"><a href="/forum">Forum</a></span>
-    <span class="menu_item"><a href="/wiki">Wiki</a></span>
   </div>
   <div class="content_header">
     <a name="1.3.3"></a>BerryBots News
@@ -111,7 +108,8 @@
         <li>Added <tt>RunnerForm.reset()</tt>, to clear all fields and values.</li>
         <li>Added <tt>RunnerForm.addDropdown()</tt>, to choose from a set of
           strings.</li>
-        <li>Added <a href="http://berrybots.com/wiki/MazerEvolver">MazerEvolver</a>
+        <li>Added
+          <a href="https://github.com/Voidious/BerryBots/blob/master/runners/mazer/mazerevolver.lua">MazerEvolver</a>
           sample runner. It uses a genetic algorithm to evolve a ship to solve a
           maze.</li>
         <li>Added option for "Round-robin" seeding in simpletourney. All ships
@@ -128,8 +126,8 @@
       <li>Bug fix: Lua errors not being saved to replay output consoles.</li>
       <li>Bug fix: Inaccurate API docs for <tt>TeamResult.stats</tt> table.
         It's a map, not a list of tables. See example usage in
-        <a href="http://berrybots.com/wiki/batch1p">batch1p</a> or
-        <a href="http://berrybots.com/wiki/batchduels">batchduels</a>.</li>
+        <a href="https://github.com/Voidious/BerryBots/blob/master/runners/batch1p.lua">batch1p</a> or
+        <a href="https://github.com/Voidious/BerryBots/blob/master/runners/batchduels.lua">batchduels</a>.</li>
       <li>Bug fix: Writing extra null chars to end of file from
         <tt>RunnerFiles.writeFile()</tt> on Windows.
       <li>Bug fix: "make install" broken when SFML is already installed on
@@ -215,9 +213,9 @@
         presented to user through a GUI form.</li>
         <li>Basic file access for saving settings or match results.</li>
         <li>Includes
-        <a href="http://berrybots.com/wiki/Category:Sample_Game_Runners">sample Game Runner programs</a>
+        <a href="https://github.com/Voidious/BerryBots/tree/master/runners">sample Game Runner programs</a>
         for batch single-player stages (like
-        <a href="http://berrybots.com/wiki/LaserGallery">LaserGallery</a>),
+        <a href="https://github.com/Voidious/BerryBots/blob/master/stages/sample/lasergallery.lua">LaserGallery</a>),
         batch duels, and a single-elimination tournament.</li>
         <li>For now, only supports Mac, Linux, and Windows.</li>
       </ul></li>
@@ -306,8 +304,12 @@
       </ul></li>
       <li>Improvements to sample ships and stages.</li>
       <ul>
-        <li>New targeting challenge stage: <a href="http://berrybots.com/wiki/LaserGallery">LaserGallery</a>. Goal is to destroy each of five ships with increasingly hard to hit movements as quickly as possible.</li>
-        <li>New 5v5 team battle stage: <a href="http://berrybots.com/wiki/TeamBattle1">TeamBattle1</a>. Try RandomBot, WallHugger, and Chaser.</li>
+        <li>New targeting challenge stage:
+          <a href="https://github.com/Voidious/BerryBots/blob/master/stages/sample/lasergallery.lua">LaserGallery</a>.
+        Goal is to destroy each of five ships with increasingly hard to hit movements as quickly as possible.</li>
+        <li>New 5v5 team battle stage:
+          <a href="https://github.com/Voidious/BerryBots/blob/master/stages/sample/teambattle1.lua">TeamBattle1</a>.
+        Try RandomBot, WallHugger, and Chaser.</li>
         <li>Stages display warning if loaded with wrong number of ships, and destroy any extra ships.</li>
         <li>Battle stages display game time in bottom left and scores at end of a match.</li>
         <li>Maze stages display completion time.</li>
@@ -323,7 +325,7 @@
       <li>Lots of bug fixes, code refactoring, and cleanup, including:
       <ul>
         <li><tt>bots/</tt> and <tt>stages/</tt> directories are now the base path for loading packages, not the directory of the main ship/stage file. So you can have a library in<br/><tt>bots/voidious/pathlib.lua</tt><br/>and use it from<br/><tt>bots/voidious/maze/mazemaster.lua</tt><br/>with:<br/><tt>require "voidious.pathlib"</tt><br/>Having source files spread across directories works much better now.</li>
-        <li>Re-organized build process with Makefile and <a href="http://berrybots.com/wiki/Category:Compiling_BerryBots">documented build instructions on the wiki</a>.</li>
+        <li>Re-organized build process with Makefile and documented build instructions on the wiki.</li>
       </ul></li>
       <li>A fancy new <a href="http://www.youtube.com/watch?v=KkLB96sbAEo">overview video</a>.</li>
     </ul>
@@ -344,11 +346,10 @@
     <br><br>
     <a href="http://facebook.com/berrybots"><img src="images/facebook_88.png" alt="Facebook" style="border:0;width:44px;height:44px;"></a>
     <a href="http://twitter.com/berrybotsftw"><img src="images/twitter_88.png"  alt="Twitter" style="border:0;width:44px;height:44px;"></a>
-    <a href="https://plus.google.com/+BerryBots" rel="publisher" style="text-decoration:none;"><img src="images/gplus_88.png" alt="Google+" style="border:0;width:54px;height:52px;margin:0 0 -5px -5px"/></a>
     <br><br>
     <hr>
     <br>
-    &copy; 2015 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
+    &copy; 2015-2024 Voidious &bull; <a href="mailto:voidious@berrybots.com">voidious@berrybots.com</a>
   </div>
 </div>
 <span id="forkongithub"><a href="https://github.com/Voidious/BerryBots">Fork me on GitHub</a></span>
